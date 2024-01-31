@@ -1,16 +1,16 @@
 {
-    "id": "ExternalDataInsightsWidget",
-    "newInstancePrefix": "External-Data-Insights-Widget",
+    "id": "ExternalFriendlyReportingInsights",
+    "newInstancePrefix": "External-Friendly-Reporting-Insights-Widget",
 	"eula": "",
 	"license": "",
     "version": "1.0.0",
-    "name": "External-Data-Insights-Widget",
-    "description": "External Friendly Reporting Data Insights Assistant",
+    "name": "External-Friendly-Reporting-Insights-Widget",
+    "description": "External Friendly Reporting Insights widget",
     "vendor": "SAP Friendly Reporting",
     "webcomponents": [
         {
             "kind": "main",
-            "tag": "external-data-insights-assistant",
+            "tag": "external-friendly-reporting-insights",
             "url": "https://erdasheshi.github.io/friendlyreportingui.github.io/Data_Insights.js",
             "integrity": "",
             "ignoreIntegrity": true

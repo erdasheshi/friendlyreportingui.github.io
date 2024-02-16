@@ -17,12 +17,37 @@
         }
     ],
     "properties": {
+        "user_id": { "type": "string" },
+        "dashboard_name": { "type": "string" },
+        "local_datetime": { "type": "string"  },
+        "authentication": { "type": "string", "default": "Bearer sc9as24jlpp7994x" }
     },
     "methods": {
+        "setUserID": {
+            "description": "Set user id",
+            "parameters": [ { "name": "user_id", "type": "string" } ],
+            "body": "this.user_id = user_id;"
+        },
+        "setDashboardName": {
+            "description": "Set dashboard name",
+            "parameters": [ { "name": "dashboard_name", "type": "string" } ],
+            "body": "this.dashboard_name = dashboard_name;"
+        },
+        "setLocalDateTime": {
+            "description": "Set local date time",
+            "parameters": [ { "name": "local_datetime", "type": "string" } ],
+            "body": "this.local_datetime = local_datetime;"
+        }
     },
     "events": {
         "onClick": {
             "description": "User Clicked."
+        },
+        "onInitialization": {
+            "description": "Widget Initialized."
+        },
+        "onPostMessageReceived": {
+            "description": "Post message received."
         }
     }
 }

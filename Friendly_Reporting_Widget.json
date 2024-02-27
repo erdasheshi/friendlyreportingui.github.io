@@ -1,0 +1,28 @@
+{
+    "id": "FriendlyReportingWidget",
+    "newInstancePrefix": "Friendly-Reporting-Widget",
+	"eula": "",
+	"license": "",
+    "version": "1.0.0",
+    "name": "Friendly-Reporting-Widget",
+    "description": "Friendly Reporting Widget",
+    "vendor": "SAP Friendly Reporting",
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "external-friendly-reporting-widget",
+            "url": "https://erdasheshi.github.io/friendlyreportingui.github.io/Friendly_Reporting_Widget.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+    },
+    "methods": {
+    },
+    "events": {
+        "onClick": {
+            "description": "User Clicked."
+        }
+    }
+}

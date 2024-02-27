@@ -727,12 +727,19 @@
 
       // Initialize menu bar and buttons
       const menuBar = document.querySelector(".menu-bar");
-      this.shadowRoot.appendChild(menuBar);
 
       menuBar.appendChild(chatbotToggler);
       menuBar.appendChild(infoBtn);
       menuBar.appendChild(searchBtn);
       menuBar.appendChild(supportChannelBtn);
+
+      this.shadowRoot.appendChild(menuBar);
+      this.shadowRoot.appendChild(chatbotToggler);
+      this.shadowRoot.appendChild(infoBtn);
+
+      this.shadowRoot.appendChild(searchBtn);
+      this.shadowRoot.appendChild(supportChannelBtn);
+
 
 
 

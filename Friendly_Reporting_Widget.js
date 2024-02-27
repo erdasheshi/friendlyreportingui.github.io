@@ -726,7 +726,7 @@
       });
 
       // Initialize menu bar and buttons
-      const menuBar = document.querySelector(".menu-bar");
+      const menuBar = this.shadowRoot.querySelector(".menu-bar");
 
       menuBar.appendChild(chatbotToggler);
       menuBar.appendChild(infoBtn);

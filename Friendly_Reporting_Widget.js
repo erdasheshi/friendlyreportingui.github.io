@@ -635,19 +635,19 @@
     let link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css';
-    this.shadowRoot.appendChild(link);
+    this.shadowRoot.appendStyleLink(link);
 
 
     let link_2 = document.createElement('link');
     link_2.rel = 'stylesheet';
     link_2.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0';
-    this.shadowRoot.appendChild(link_2);
+    this.shadowRoot.appendStyleLink(link_2);
 
 
     let link_3 = document.createElement('link');
     link_3.rel = 'stylesheet';
     link_3.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0';
-    this.shadowRoot.appendChild(link_3);
+    this.shadowRoot.appendStyleLink(link_3);
 
       /*------------------------------- Favorites & ALL Insights ----------------------------------------- */
       const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
@@ -662,7 +662,7 @@
       const chatbox = this.shadowRoot.querySelector(".chatbox");
       const chatInput = this.shadowRoot.querySelector(".chat-input textarea");
       const sendChatBtn = this.shadowRoot.querySelector(".chat-input span");
-
+      this.shadowRoot.appendChild(chatbox);
       let userMessage = null; // Variable to store user's message
       const API_KEY = "PASTE-YOUR-API-KEY"; // Paste your API key here
       const inputInitHeight = chatInput.scrollHeight;
@@ -1007,7 +1007,7 @@
     handleOptionClick = (option) => {
       const incomingChatLi = this.createChatLi("", "incoming");
       this.chatbox.appendChild(incomingChatLi);
-      this.chatbox.scrollTo(0, chatbox.scrollHeight);
+      this.chatbox.scrollTo(0, this.chatbox.scrollHeight);
 
       // Remove intention buttons after selection
       this.shadowRoot.querySelector(".options-container").remove();

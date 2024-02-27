@@ -649,6 +649,8 @@
     link_3.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0';
     this.shadowRoot.appendStyleLink(link_3);
 
+    this.shadowRoot.appendStyleLink('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
+
       /*------------------------------- Favorites & ALL Insights ----------------------------------------- */
       const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
       const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');

@@ -624,32 +624,33 @@
       let shadowRoot = this.attachShadow({
         mode: "open"
       });
+
+      let link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css';
+      this.shadowRoot.appendStyleLink(link);
+  
+  
+      let link_2 = document.createElement('link');
+      link_2.rel = 'stylesheet';
+      link_2.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0';
+      this.shadowRoot.appendStyleLink(link_2);
+  
+  
+      let link_3 = document.createElement('link');
+      link_3.rel = 'stylesheet';
+      link_3.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0';
+      this.shadowRoot.appendStyleLink(link_3);
+        
       shadowRoot.appendChild(template.content.cloneNode(true));
       this._props = {};
+
     }
     async connectedCallback() {
       this.initMain();
     }
     async initMain() {
 
-    let link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css';
-    this.shadowRoot.appendStyleLink(link);
-
-
-    let link_2 = document.createElement('link');
-    link_2.rel = 'stylesheet';
-    link_2.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0';
-    this.shadowRoot.appendStyleLink(link_2);
-
-
-    let link_3 = document.createElement('link');
-    link_3.rel = 'stylesheet';
-    link_3.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0';
-    this.shadowRoot.appendStyleLink(link_3);
-
-    this.shadowRoot.appendStyleLink('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
 
       /*------------------------------- Favorites & ALL Insights ----------------------------------------- */
       const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');

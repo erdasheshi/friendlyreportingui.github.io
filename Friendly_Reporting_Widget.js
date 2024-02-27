@@ -639,7 +639,7 @@
       const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
       const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
 
-      this.fetchInsights();
+      this.fetchInsights().catch(error => console.error('Error:', error));
 
       /*------------------------------- Digital Chat ----------------------------------------- */
 
@@ -669,7 +669,7 @@
         }
       });
 
-      sendChatBtn.addEventListener("click", handleChat);  //////////////// might not be corret... maybe the class of the button is needed instead "document.body"////////////////
+      sendChatBtn.addEventListener("click", this.handleChat);  //////////////// might not be corret... maybe the class of the button is needed instead "document.body"////////////////
       closeBtn.addEventListener("click", () => {
         const class_1 = this.shadowRoot.querySelector("show-chatbot");
         class_1.classList.toggle("show-chatbot");

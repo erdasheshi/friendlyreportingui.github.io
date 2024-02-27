@@ -348,7 +348,7 @@
             justify-content: center;
             align-items: center;
             padding-top: 1%;
-                }
+        }
 
         .menu-btn {
             padding: 5px 15px;
@@ -684,7 +684,11 @@
             // Create the insight-body-text div and add it to the item div
             const bodyTextDiv = document.createElement('div');
             bodyTextDiv.className = 'insight-body-text';
-            bodyTextDiv.textContent = item.content;
+
+            //properly render HTML syntax within the text 
+            bodyTextDiv.innerHTML = item.content;
+
+    //      bodyTextDiv.textContent = item.content;
             itemElement.appendChild(bodyTextDiv);
 
             // Add click event listener to the button
@@ -961,104 +965,3 @@
 </body>
 
 </html>
-
-<!--
-
-        // Define API metadata
-        const API_URL = "https://hda-friendly-reporting.me.sap.corp/api/v1/llms/navigation";
-        const messageElement = chatElement.querySelector("p");
-
-        const data = { user_prompt: userMessage };
-        const requestOptions = {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer sc9as24jlpp7994x'
-            },
-            body: JSON.stringify(data)
-        };
-
-        
-
-        /*    // API call
-           await fetch(API_URL, requestOptions)
-              .then((response) => {
-                const res = response;
-                if (res.ok) {
-                  return res.json();
-                } else {
-                  throw new Error('Network response failed.');
-                }
-              })
-              .then((data) => {
-                const output_guide = data.output_guide;
-                generatedText.value  = output_guide;
-              })
-              .catch((error) => console.error(`Fetch Error: ${error}`));
-          });
-    */
-
-
-        // Send POST request to API, get response and set the reponse as paragraph text
-        fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
-            messageElement.textContent = data.output_guide.trim();
-        }).catch(() => {
-            messageElement.classList.add("error");
-            messageElement.textContent = "Oops! Something went wrong. Please try again.";
-        }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
-    }
--->
-
-
-
-<!-- API call as per the GET structure 
-
-apiUrl = 'https://hda-friendly-reporting.me.sap.corp/api/v1/insights';
-const apiConfiggg = {
-    method: "GET",
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer sc9as24jlpp7994x'
-    },
-};
-
-const response = await fetch(apiUrl, apiConfiggg)
-if (!response.ok) {
-    messageElement.classList.add("error");
-    messageElement.textContent = `Something went wrong. Fetch Error: ${error}`;
-    throw new Error('Network response was not ok');
-}
-const data = await response.json();
-
-messageElement.textContent = data.insights[0].content;
-chatbox.scrollTo(0, chatbox.scrollHeight);
-
-
--->
-
-<!--  API call with error handling
-                  await fetch(apiUrl, apiConfig)
-                    .then((response) => {
-                        const res = response;
-                        if (res.ok) {
-                            console.log("2.1 ok");
-
-                            return res.json();
-
-                            console.log("2.2 ok");
-
-                        } else {
-                            console.log("2 not ok");
-                            throw new Error('Network response failed.');
-                        }
-                    })
-                    .then((data) => {
-                        messageElement.textContent = data.answer;
-                    })
-                    .catch((error) => {
-                        messageElement.classList.add("error");
-                        messageElement.textContent = `Something went wrong.  ${error}`;
-                    }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
-               
-               
--->

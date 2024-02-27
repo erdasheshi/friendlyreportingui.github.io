@@ -639,6 +639,8 @@
       const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
       const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
 
+      this.fetchInsights();
+
       /*------------------------------- Digital Chat ----------------------------------------- */
 
       const chatbotToggler = this.shadowRoot.querySelector(".chatbot-toggler");
@@ -735,12 +737,6 @@
 
       this.shadowRoot.appendChild(menuBar);
       this.shadowRoot.appendChild(chatbotToggler);
-      this.shadowRoot.appendChild(infoBtn);
-
-      this.shadowRoot.appendChild(searchBtn);
-      this.shadowRoot.appendChild(supportChannelBtn);
-
-
 
 
     }
@@ -776,7 +772,7 @@
       }
 
       const data = await response.json();
-      populateInsightsUI(data.insights);
+      this.populateInsightsUI(data.insights);
 
       return data.insights;
     }

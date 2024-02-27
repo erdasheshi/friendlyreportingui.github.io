@@ -627,6 +627,13 @@
     }
     async initMain() {
 
+        
+    // Append the font-awesome stylesheet link
+    this.appendStyleLink("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+  
+    // Append Google Fonts link for icons
+    this.appendStyleLink("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+    this.appendStyleLink("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0");
 
       /*------------------------------- Favorites & ALL Insights ----------------------------------------- */
       const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
@@ -991,6 +998,12 @@
       this.generateResponse(incomingChatLi, option);
     }
 
+    appendStyleLink(href) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      this.shadowRoot.appendChild(link);
+    }
 
   }
   customElements.define("external-friendly-reporting-widget", Widget);

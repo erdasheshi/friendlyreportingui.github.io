@@ -997,13 +997,6 @@
       this.generateResponse(incomingChatLi, option);
     }
 
-    appendStyleLink(href) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = href;
-      this.shadowRoot.appendChild(link);
-    }
-
   }
   customElements.define("external-friendly-reporting-widget", Widget);
 })()

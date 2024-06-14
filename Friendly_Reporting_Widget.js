@@ -14,7 +14,7 @@
 <div class="window-container">
 <!-- Menu & Title -->
 <div class="header">
-    <h1 class="title">Data Insights</h1>
+    <h1 class="title">Data Insights v2</h1>
     <div class="menu-bar"></div>
 </div>
 

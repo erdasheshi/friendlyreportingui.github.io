@@ -3,13 +3,565 @@
   template.innerHTML = `
 
 <style>
-@import url('style.css')
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0')
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0')
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0')
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0');
 
 
+html {
+    overflow-y: scroll;
+}
+
+body {
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+.window-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Adjust the space between elements */
+}
+
+/* Style for the container */
+div {
+    overflow-y: auto;
+    margin: 0.5rem auto;
+    max-width: 100%;
+    width: 100%;
+}
+
+.container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.title {
+    font-family: Arial, sans-serif;
+    color: #e28100;
+    text-align: center;
+}
+
+/*------------------------- ChatBot -------------------------*/
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: rgb(182, 134, 21);
+}
+
+.chatbot-toggler {
+    position: fixed;
+    bottom: 25px;
+    right: 35px;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #568912;
+    transition: all 0.2s ease;
+}
+
+.chatbot-toggler span {
+    color: #fff;
+    position: absolute;
+}
+
+.chatbot-toggler span:nth-child(2),
+body.show-chatbot .chatbot-toggler span:nth-child(1) {
+    opacity: 0;
+}
+
+body.show-chatbot .chatbot-toggler span:nth-child(2) {
+    opacity: 1;
+}
+
+.chatbot-label {
+    position: absolute;
+    right: 60px;
+    white-space: nowrap;
+    color: blue;
+    font-size: 12px;
+}
+
+.chatbot-toggler .chatbot-label {
+    color: rgb(182, 134, 21);
+
+}
+
+.chatbot {
+    position: fixed;
+    bottom: 5%;
+    right: 75px;
+    width: 420px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.5);
+    transform-origin: bottom right;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s ease;
+}
+
+body.show-chatbot .chatbot {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.chatbot header {
+    padding: 16px 0;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #568912;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot header span {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    display: none;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+header h2 {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.chatbot .chatbox {
+    overflow-y: auto;
+    height: 510px;
+    padding: 30px 20px 100px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 25px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+
+.chatbox .chat {
+    display: flex;
+    list-style: none;
+}
+
+.chatbox .outgoing {
+    margin: 20px 0;
+    justify-content: flex-end;
+}
+
+.chatbox .incoming span {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    cursor: default;
+    text-align: center;
+    line-height: 32px;
+    align-self: flex-end;
+    background: #568912;
+    border-radius: 4px;
+    margin: 0 10px 7px 0;
+}
+
+.chatbox .chat p {
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 12px 16px;
+    border-radius: 10px 10px 0 10px;
+    max-width: 75%;
+    color: #fff;
+    font-size: 0.95rem;
+    background: #568912;
+}
+
+.chatbox .incoming p {
+    border-radius: 10px 10px 10px 0;
+}
+
+.chatbox .chat p.error {
+    color: #721c24;
+    background: #f8d7da;
+}
+
+.chatbox .incoming p {
+    color: #000;
+    background: #f2f2f2;
+}
+
+.chatbot .chat-input {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 3px 20px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input textarea {
+    height: 55px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    max-height: 180px;
+    padding: 15px 15px 15px 0;
+    font-size: 0.95rem;
+}
+
+.chat-input span {
+    align-self: flex-end;
+    color: #568912;
+    cursor: pointer;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    font-size: 1.35rem;
+}
+
+.chat-input textarea:valid~span {
+    visibility: visible;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    /* Adds space between buttons */
+    margin-top: 5px;
+    /* Adds some space above the button container */
+    margin-bottom: 1rem;
+}
+
+.options-sentence {
+    font-size: 0.7rem;
+    /* Example font size, adjust as needed */
+    color: #333;
+    /* Example text color, adjust as needed */
+    margin-bottom: 10px;
+    /* Ensure there's some space before the buttons */
+}
+
+.option-button {
+    padding: 0px 5px;
+    font-size: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid transparent;
+    transition: background-color 1s, border-color 0.3s;
+}
+
+/* Individual styles for each button to have different border colors */
+.option-button:nth-child(1) {
+    border-color: #007bff;
+}
+
+.option-button:nth-child(2) {
+    border-color: #caa228;
+}
+
+.option-button:nth-child(3) {
+    border-color: #3e9c54;
+}
+
+.option-button:hover {
+    background-color: #e2e6ea;
+    /* Darker grey on hover */
+}
+
+
+@media (max-width: 490px) {
+    .chatbot-toggler {
+        right: auto;
+        bottom: auto;
+        position: static;
+        /* Let it flow within the menu bar */
+        margin: 0;
+    }
+
+    .chatbot {
+        right: auto;
+        bottom: auto;
+        height: 100%;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .chatbot .chatbox {
+        height: 90%;
+        padding: 25px 15px 100px;
+    }
+
+    .chatbot .chat-input {
+        padding: 5px 15px;
+    }
+
+    .chatbot header span {
+        display: block;
+    }
+}
+
+/*------------------------- MenuBar -------------------------*/
+
+.menu-bar {
+    background-color: transparent;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
+}
+
+.menu-btn {
+    padding: 5px 15px;
+    color: rgb(182, 134, 21);
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    /* Space between icon and text */
+
+}
+
+.menu-btn:hover,
+.menu-btn:focus {
+    background-color: rgba(0, 123, 255, 0.207);
+    /* Button's background on hover/focus */
+    color: #0057b3;
+    /* Icon color */
+}
+
+.menu-btn .btn-text {
+    font-size: 12px;
+    /* Text size, adjust as needed */
+}
+
+/*------------------------- ??????????????????-------------- -------------------------*/
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(232, 171, 17)
+}
+
+.section-header h2 {
+    margin: 0;
+    /* Remove default margin to eliminate space around the title */
+    color: rgb(232, 171, 17)
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    /* Light grey horizontal line */
+    margin-top: 10px;
+    /* Adjust if necessary to control space between line and header */
+    margin-bottom: 10px;
+    /* Adjust if necessary to control space between line and content below */
+}
+
+.expandable-content {
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Styling for the new container */
+.additional-container {
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* Light background for visibility */
+    margin-top: 20px;
+    /* Space from the sections above */
+}
+
+/* Reset float for elements after floated items */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*------------------------- Insight Headers -------------------------*/
+
+/*    #favorites-section h2,
+#all-insights-section h2 {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 0;
+}*/
+
+#add-item-btn,
+#all-items-btn {
+    float: right;
+    margin-top: -1.3rem;
+    /* Adjust based on your layout to align properly */
+    background-color: transparent;
+    border: transparent;
+    color: blue;
+    opacity: 1;
+    /* Just in case */
+    visibility: visible;
+    /* Just in case */
+}
+
+/*------------------------- Insights -------------------------*/
+
+/* Style for the insights, title and list */
+.insights-section {
+    display: block;
+    max-height: 80%;
+    /* Example fixed height */
+    border-top: 0.2px solid #4f4c4c;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 1% 4%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.button-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.insight-expand-btn {
+    cursor: pointer;
+    background-color: #33260b00;
+    color: rgb(182, 134, 21);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.insight-element {
+    border-bottom: 0.2px solid #4f4c4c;
+    margin-bottom: 10px;
+}
+
+.insight-body-text {
+    display: none;
+    color: #cac5c5;
+}
+
+.insights-title {
+    font-family: Arial, sans-serif;
+    color: rgb(222, 209, 171);
+    font-weight: bold;
+}
+
+/* Style for the read insights button image */
+.img-read-insights {
+    height: 30px;
+}
+
+/* Style for insights container*/
+.insights-container {
+    top: auto;
+
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 88%;
+}
+
+/* Style for the button */
+#insights-button {
+    padding: 2%;
+    font-size: 85%;
+    background-color: #00709f;
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+#read-insights-button {
+    padding: 1%;
+    background-color: #3a393b;
+    border-radius: 50%;
+    border: 0;
+}
+
+/*------------------------- User Feedback -------------------------*/
+
+.favorite-button,
+.favorite-button span {
+    cursor: pointer;
+    background-color: #33260b00;
+    color: rgb(182, 134, 21);
+    border: none;
+    padding: 1px 0px 0px 10px;
+    font-size: 22px;
+}
+
+.thumbs-up,
+.thumbs-up span {
+    color: rgba(0, 128, 0, 0.601);
+    background-color: transparent;
+    border: none;
+    padding: 1px 2px;
+    font-size: 22px;
+}
+
+.thumbs-down,
+.thumbs-down span {
+    color: rgba(255, 0, 0, 0.763);
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 1px 2px;
+    font-size: 22px;
+    padding-right: 10px;
+}                      
 </style>
 <div class="window-container">
 <!-- Menu & Title -->

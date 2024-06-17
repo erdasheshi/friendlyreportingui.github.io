@@ -4,13 +4,17 @@
 
 <style>
 @import url('style.css')
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0')
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0')
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0')
 
 
 </style>
 <div class="window-container">
 <!-- Menu & Title -->
 <div class="header">
-    <h1 class="title">Data Insights</h1>
+    <h1 class="title">Data Insights v2</h1>
     <div class="menu-bar"></div>
 </div>
 
@@ -444,5 +448,4 @@
 
   }
   customElements.define("external-friendly-reporting-widget", Widget);
-})()
-  ;
+})();

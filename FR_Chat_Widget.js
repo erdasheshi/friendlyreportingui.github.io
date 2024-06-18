@@ -405,29 +405,6 @@
       this.initMain();
     }
 
-    /*------------------------------- Chat setup -----------------------------------------*/
-
-    async fetchInsights() {
-      const apiUrl = 'https://hda-friendly-reporting.me.sap.corp/api/v1/insights';
-      const apiConfig = {
-        method: "GET",
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer sc9as24jlpp7994x'
-        },
-      };
-
-      const response = await fetch(apiUrl, apiConfig)
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const data = await response.json();
-      this.populateInsightsUI(data.insights);
-
-      return data.insights;
-    }
-
     /*------------------------------- Digital Chat ----------------------------------------- */
 
     createChatLi = (message, className) => {
@@ -442,7 +419,6 @@
       return chatLi; // return chat <li> element
     }
 
-    //this.shadowRoot done
     generateResponse = async (chatElement, optionBtn) => {
       let apiUrl = null;
       let response = null;

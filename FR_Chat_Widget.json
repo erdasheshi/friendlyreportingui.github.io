@@ -1,0 +1,28 @@
+{
+    "id": "FRChatWidget",
+    "newInstancePrefix": "FR_Chat_Widget",
+	"eula": "",
+	"license": "",
+    "version": "1.0.0",
+    "name": "FR_Chat_Widget",
+    "description": "Friendly Reporting - Data insights chat widget",
+    "vendor": "SAP Friendly Reporting",
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "external-friendly-reporting-chat-widget",
+            "url": "https://erdasheshi.github.io/friendlyreportingui.github.io/FR_Chat_Widget.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+    },
+    "methods": {
+    },
+    "events": {
+        "onClick": {
+            "description": "User Clicked."
+        }
+    }
+}

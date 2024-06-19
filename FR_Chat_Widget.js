@@ -52,11 +52,11 @@
       }
 
       .chatbot-toggler span:nth-child(2),
-      .show-chatbot .chatbot-toggler span:nth-child(1) {
+      .window-container .chatbot-toggler span:nth-child(1) {
         opacity: 0;
       }
 
-      .show-chatbot .chatbot-toggler span:nth-child(2) {
+      .window-container .chatbot-toggler span:nth-child(2) {
         opacity: 1;
       }
 
@@ -90,7 +90,7 @@
         transition: all 0.1s ease;
       }
 
-      .show-chatbot .chatbot {
+      .window-container .chatbot {
         opacity: 1;
         pointer-events: auto;
         transform: scale(1);
@@ -343,17 +343,17 @@
 
       sendChatBtn.addEventListener("click", this.handleChat);  //////////////// might not be corret... maybe the class of the button is needed instead "document.body"////////////////
       closeBtn.addEventListener("click", () => {
-        const class_1 = this.shadowRoot.querySelector("show-chatbot");
-        class_1.classList.toggle("show-chatbot");
+        const class_1 = this.shadowRoot.querySelector("window-container");
+        class_1.classList.toggle("window-container");
       });
 
       chatbotToggler.addEventListener("click", () => {
         console.log("Inside toggler", this.shadowRoot);
         console.log("Body ? ", document.body);
         //this.toggleChatBot();
-        const class_1 = this.shadowRoot.querySelector(".show-chatbot");
+        const class_1 = this.shadowRoot.querySelector(".window-container");
         console.log(class_1.classList);
-        class_1.classList.toggle("show-chatbot");
+        class_1.classList.toggle("window-container");
       });
     }
 
@@ -451,8 +451,8 @@
     }
 
     toggleChatBot() {
-      const isChatBotVisible = document.body.classList.contains("show-chatbot");
-      document.body.classList.toggle("show-chatbot", !isChatBotVisible);
+      const isChatBotVisible = document.body.classList.contains("window-container");
+      document.body.classList.toggle("window-container", !isChatBotVisible);
     }
 
     //this.shadowRoot done

@@ -12,6 +12,16 @@
         color: rgb(182, 134, 21);
       }
 
+      body {
+        overflow-y: scroll;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        background-color: black;
+      }
+
       .chatbot-toggler {
         position: fixed;
         bottom: 25px;
@@ -252,38 +262,6 @@
       .option-button:hover {
         background-color: #e2e6ea;
         /* Darker grey on hover */
-      }
-
-
-      @media (max-width: 490px) {
-        .chatbot-toggler {
-            right: auto;
-            bottom: auto;
-            position: static;
-            /* Let it flow within the menu bar */
-            margin: 0;
-        }
-
-        .chatbot {
-            right: auto;
-            bottom: auto;
-            height: 100%;
-            border-radius: 0;
-            width: 100%;
-        }
-
-        .chatbot .chatbox {
-            height: 90%;
-            padding: 25px 15px 100px;
-        }
-
-        .chatbot .chat-input {
-            padding: 5px 15px;
-        }
-
-        .chatbot header span {
-            display: block;
-        }
       }
 </style>
 

@@ -12,15 +12,22 @@
         color: rgb(182, 134, 21);
       }
 
-      body {
-        overflow-y: scroll;
+      .window-container {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        margin: 0;
-        background-color: black;
+        flex-direction: column;
+        gap: 10px;
+        /* Adjust the space between elements */
       }
+
+      // body {
+      //   overflow-y: scroll;
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: center;
+      //   height: 100%;
+      //   margin: 0;
+      //   background-color: black;
+      // }
 
       .chatbot-toggler {
         position: fixed;
@@ -45,11 +52,11 @@
       }
 
       .chatbot-toggler span:nth-child(2),
-      body.show-chatbot .chatbot-toggler span:nth-child(1) {
+      .show-chatbot .chatbot-toggler span:nth-child(1) {
         opacity: 0;
       }
 
-      body.show-chatbot .chatbot-toggler span:nth-child(2) {
+      .show-chatbot .chatbot-toggler span:nth-child(2) {
         opacity: 1;
       }
 
@@ -83,7 +90,7 @@
         transition: all 0.1s ease;
       }
 
-      body.show-chatbot .chatbot {
+      .show-chatbot .chatbot {
         opacity: 1;
         pointer-events: auto;
         transform: scale(1);
@@ -266,30 +273,32 @@
 </style>
 
 
-<body>
+
 <!-- Chat window -->
-<div class="chatbot">
-    <header>
-        <h2>Digital Assistant</h2>
-        <span class="close-btn material-symbols-outlined">Close</span>
-    </header>
-    <ul class="chatbox">
-        <li class="chat incoming">
-            <span class="material-symbols-outlined">smart_toy</span>
-            <p>Hi there 👋<br>How can I help you today?</p>
-        </li>
-    </ul>
-    <div class="chat-input">
-        <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
-        <span id="send-btn" class="material-symbols-rounded">send</span>
+  <div class = "window-container">
+    <div class="chatbot">
+        <header>
+            <h2>Digital Assistant</h2>
+            <span class="close-btn material-symbols-outlined">Close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Hi there 👋<br>How can I help you today?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
     </div>
-</div>
-<!-- Chat button -->
-<button class="chatbot-toggler">
-    <span class="material-symbols-rounded">Chat</span>
-    <span class="material-symbols-outlined">Close</span>
-</button>
-</body>
+    <!-- Chat button -->
+    <button class="chatbot-toggler">
+        <span class="material-symbols-rounded">Chat</span>
+        <span class="material-symbols-outlined">Close</span>
+    </button>
+  </div>
+
 `;
   class Widget extends HTMLElement {
     constructor() {
@@ -440,10 +449,10 @@
       }
     }
 
-    toggleChatBot() {
-      const isChatBotVisible = document.body.classList.contains("show-chatbot");
-      document.body.classList.toggle("show-chatbot", !isChatBotVisible);
-    }
+    // toggleChatBot() {
+    //   const isChatBotVisible = document.body.classList.contains("show-chatbot");
+    //   document.body.classList.toggle("show-chatbot", !isChatBotVisible);
+    // }
 
     //this.shadowRoot done
     handleChat = () => {

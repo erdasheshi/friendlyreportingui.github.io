@@ -266,7 +266,7 @@
 </style>
 
 
-
+<body>
 <!-- Chat window -->
 <div class="chatbot">
     <header>
@@ -289,6 +289,7 @@
     <span class="material-symbols-rounded">Chat</span>
     <span class="material-symbols-outlined">Close</span>
 </button>
+</body>
 `;
   class Widget extends HTMLElement {
     constructor() {
@@ -339,10 +340,10 @@
 
       chatbotToggler.addEventListener("click", () => {
         console.log("Inside toggler", this.shadowRoot);
-        this.toggleChatBot();
-        // const class_1 = this.shadowRoot.querySelector(".show-chatbot");
-        // console.log(class_1.classList);
-        // class_1.classList.toggle("show-chatbot");
+        //this.toggleChatBot();
+        const class_1 = this.shadowRoot.querySelector(".show-chatbot");
+        console.log(class_1.classList);
+        class_1.classList.toggle("show-chatbot");
       });
     }
 
@@ -440,10 +441,8 @@
     }
 
     toggleChatBot() {
-      console.log("Inside toggleChatbot", this.shadowRoot);
       const isChatBotVisible = document.body.classList.contains("show-chatbot");
       document.body.classList.toggle("show-chatbot", !isChatBotVisible);
-      console.log("After toggleChatbot", this.shadowRoot);
     }
 
     //this.shadowRoot done

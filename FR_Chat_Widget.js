@@ -265,11 +265,7 @@
       }
 </style>
 
-<!-- Chat button -->
-<button class="chatbot-toggler">
-    <span class="material-symbols-rounded">Chat</span>
-    <span class="material-symbols-outlined">Close</span>
-</button>
+
 
 <!-- Chat window -->
 <div class="chatbot">
@@ -288,6 +284,11 @@
         <span id="send-btn" class="material-symbols-rounded">send</span>
     </div>
 </div>
+<!-- Chat button -->
+<button class="chatbot-toggler">
+    <span class="material-symbols-rounded">Chat</span>
+    <span class="material-symbols-outlined">Close</span>
+</button>
 `;
   class Widget extends HTMLElement {
     constructor() {
@@ -338,7 +339,8 @@
 
       chatbotToggler.addEventListener("click", () => {
         console.log("Inside toggler", this.shadowRoot);
-        const class_1 = this.shadowRoot.querySelector("show-chatbot");
+        this.toggleChatBot();
+        const class_1 = this.shadowRoot.querySelector(".show-chatbot");
         console.log(class_1.classList);
         class_1.classList.toggle("show-chatbot");
       });

@@ -337,7 +337,7 @@
       });
 
       chatbotToggler.addEventListener("click", () => {
-        console.log("Inside toggler");
+        console.log("Inside toggler", this.shadowRoot);
         const class_1 = this.shadowRoot.querySelector("show-chatbot");
         console.log(class_1.classList);
         class_1.classList.toggle("show-chatbot");

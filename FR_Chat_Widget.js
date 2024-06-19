@@ -1,345 +1,62 @@
 (function () {
   let template = document.createElement("template");
   template.innerHTML = `
-
-<style>
-
-      html {
-        overflow-y: scroll;
-      }
-
-      body {
-        overflow-y: scroll;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        margin: 0;
-        background-color: black;
-      }
-
-      .window-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        /* Adjust the space between elements */
-      }
-
-      /*------------------------- ChatBot -------------------------*/
-
-      /* Import Google font - Poppins */
-      // @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-        color: rgb(182, 134, 21);
-      }
-
-      .chatbot-toggler {
-        position: fixed;
-        bottom: 25px;
-        right: 35px;
-        outline: none;
-        border: none;
-        height: 50px;
-        width: 50px;
-        display: flex;
-        cursor: pointer;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background: #568912;
-        transition: all 0.2s ease;
-      }
-
-      .chatbot-toggler span {
-        color: #fff;
-        position: absolute;
-      }
-
-      .chatbot-toggler span:nth-child(2),
-      body.show-chatbot .chatbot-toggler span:nth-child(1) {
-        opacity: 0;
-      }
-
-      body.show-chatbot .chatbot-toggler span:nth-child(2) {
-        opacity: 1;
-      }
-
-      .chatbot-label {
-        position: absolute;
-        right: 60px;
-        white-space: nowrap;
-        color: blue;
-        font-size: 12px;
-      }
-
-      .chatbot-toggler .chatbot-label {
-        color: rgb(182, 134, 21);
-
-      }
-
-      .chatbot {
-        position: fixed;
-        bottom: 5%;
-        right: 75px;
-        width: 420px;
-        background: #fff;
-        border-radius: 15px;
-        overflow: hidden;
-        opacity: 0;
-        pointer-events: none;
-        transform: scale(0.5);
-        transform-origin: bottom right;
-        box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
-            0 32px 64px -48px rgba(0, 0, 0, 0.5);
-        transition: all 0.1s ease;
-      }
-
-      body.show-chatbot .chatbot {
-        opacity: 1;
-        pointer-events: auto;
-        transform: scale(1);
-      }
-
-      .chatbot header {
-        padding: 16px 0;
-        position: relative;
-        text-align: center;
-        color: #fff;
-        background: #568912;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .chatbot header span {
-        position: absolute;
-        right: 15px;
-        top: 50%;
+  <style>
+      .hidden {
         display: none;
-        cursor: pointer;
-        transform: translateY(-50%);
       }
-
-      header h2 {
-        font-size: 1.4rem;
-        color: white;
+      #chat-widget-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        flex-direction: column;
       }
-
-      .chatbot .chatbox {
-        overflow-y: auto;
-        height: 510px;
-        padding: 30px 20px 100px;
+      #chat-popup {
+        height: 70vh;
+        max-height: 70vh;
+        transition: all 0.3s;
+        overflow: hidden;
       }
-
-      .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
-        background: #fff;
-        border-radius: 25px;
-      }
-
-      .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 25px;
-      }
-
-      .chatbox .chat {
-        display: flex;
-        list-style: none;
-      }
-
-      .chatbox .outgoing {
-        margin: 20px 0;
-        justify-content: flex-end;
-      }
-
-      .chatbox .incoming span {
-        width: 32px;
-        height: 32px;
-        color: #fff;
-        cursor: default;
-        text-align: center;
-        line-height: 32px;
-        align-self: flex-end;
-        background: #568912;
-        border-radius: 4px;
-        margin: 0 10px 7px 0;
-      }
-
-      .chatbox .chat p {
-        white-space: normal;
-        word-wrap: break-word;
-        padding: 12px 16px;
-        border-radius: 10px 10px 0 10px;
-        max-width: 75%;
-        color: #fff;
-        font-size: 0.95rem;
-        background: #568912;
-      }
-
-      .chatbox .incoming p {
-        border-radius: 10px 10px 10px 0;
-      }
-
-      .chatbox .chat p.error {
-        color: #721c24;
-        background: #f8d7da;
-      }
-
-      .chatbox .incoming p {
-        color: #000;
-        background: #f2f2f2;
-      }
-
-      .chatbot .chat-input {
-        display: flex;
-        gap: 5px;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background: #fff;
-        padding: 3px 20px;
-        border-top: 1px solid #ddd;
-      }
-
-      .chat-input textarea {
-        height: 55px;
-        width: 100%;
-        border: none;
-        outline: none;
-        resize: none;
-        max-height: 180px;
-        padding: 15px 15px 15px 0;
-        font-size: 0.95rem;
-      }
-
-      .chat-input span {
-        align-self: flex-end;
-        color: #568912;
-        cursor: pointer;
-        height: 55px;
-        display: flex;
-        align-items: center;
-        visibility: hidden;
-        font-size: 1.35rem;
-      }
-
-      .chat-input textarea:valid~span {
-        visibility: visible;
-      }
-
-      .options-container {
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        /* Adds space between buttons */
-        margin-top: 5px;
-        /* Adds some space above the button container */
-        margin-bottom: 1rem;
-      }
-
-      .options-sentence {
-        font-size: 0.7rem;
-        /* Example font size, adjust as needed */
-        color: #333;
-        /* Example text color, adjust as needed */
-        margin-bottom: 10px;
-        /* Ensure there's some space before the buttons */
-      }
-
-      .option-button {
-        padding: 0px 5px;
-        font-size: 0.7rem;
-        border-radius: 5px;
-        cursor: pointer;
-        background-color: transparent;
-        border: 2px solid transparent;
-        transition: background-color 1s, border-color 0.3s;
-      }
-
-      /* Individual styles for each button to have different border colors */
-      .option-button:nth-child(1) {
-        border-color: #007bff;
-      }
-
-      .option-button:nth-child(2) {
-        border-color: #caa228;
-      }
-
-      .option-button:nth-child(3) {
-        border-color: #3e9c54;
-      }
-
-      .option-button:hover {
-        background-color: #e2e6ea;
-        /* Darker grey on hover */
-      }
-
-
-      @media (max-width: 490px) {
-        .chatbot-toggler {
-            right: auto;
-            bottom: auto;
-            position: static;
-            /* Let it flow within the menu bar */
-            margin: 0;
-        }
-
-        .chatbot {
-            right: auto;
-            bottom: auto;
-            height: 100%;
-            border-radius: 0;
-            width: 100%;
-        }
-
-        .chatbot .chatbox {
-            height: 90%;
-            padding: 25px 15px 100px;
-        }
-
-        .chatbot .chat-input {
-            padding: 5px 15px;
-        }
-
-        .chatbot header span {
-            display: block;
+      @media (max-width: 768px) {
+        #chat-popup {
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          max-height: 100%;
+          border-radius: 0;
         }
       }
 
-</style>
-<div class="window-container">
-  <!-- Chat button -->
-  <button class="chatbot-toggler">
-      <span class="material-symbols-rounded">Chat</span>
-      <span class="material-symbols-outlined">close</span>
-      <!--  <span class="chatbot-label">Digital Assistant</span> -->
-  </button>
-  <!--<span class="btn-text">Chat</span>-->
-
-  <!-- Chat window -->
-  <div class="chatbot">
-    <header>
-        <h2>Digital Assistant</h2>
-        <span class="close-btn material-symbols-outlined">close</span>
-    </header>
-    <ul class="chatbox">
-        <li class="chat incoming">
-            <span class="material-symbols-outlined">smart_toy</span>
-            <p>Hi there 👋<br>How can I help you today?</p>
-        </li>
-    </ul>
-    <div class="chat-input">
-        <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
-        <span id="send-btn" class="material-symbols-rounded">send</span>
+  </style>
+  <div id="chat-bubble" class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center cursor-pointer text-3xl">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+      </svg>
     </div>
-  </div>
-</div>
+    <div id="chat-popup" class="hidden absolute bottom-20 right-0 w-96 bg-white rounded-md shadow-md flex flex-col transition-all text-sm">
+      <div id="chat-header" class="flex justify-between items-center p-4 bg-gray-800 text-white rounded-t-md">
+        <h3 class="m-0 text-lg">Chat Widget by GPT4</h3>
+        <button id="close-popup" class="bg-transparent border-none text-white cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div id="chat-messages" class="flex-1 p-4 overflow-y-auto"></div>
+      <div id="chat-input-container" class="p-4 border-t border-gray-200">
+        <div class="flex space-x-4 items-center">
+          <input type="text" id="chat-input" class="flex-1 border border-gray-300 rounded-md px-4 py-2 outline-none w-3/4" placeholder="Type your message...">
+          <button id="chat-submit" class="bg-gray-800 text-white rounded-md px-4 py-2 cursor-pointer">Send</button>
+        </div>
+        <div class="flex text-center text-xs pt-4">
+          <span class="flex-1">Prompted by <a href="https://twitter.com/anantrp" target="_blank" class="text-indigo-600">@anantrp</a></span>
+        </div>
+      </div>
+    </div>
 `;
   class Widget extends HTMLElement {
     constructor() {
@@ -355,45 +72,86 @@
     }
     async initMain() {
       /*------------------------------- Digital Chat ----------------------------------------- */
+      const chatInput = document.getElementById('chat-input');
+  const chatSubmit = document.getElementById('chat-submit');
+  const chatMessages = document.getElementById('chat-messages');
+  const chatBubble = document.getElementById('chat-bubble');
+  const chatPopup = document.getElementById('chat-popup');
+  const closePopup = document.getElementById('close-popup');
 
-      const chatbotToggler = this.shadowRoot.querySelector(".chatbot-toggler");
-      const closeBtn = this.shadowRoot.querySelector(".close-btn");
-      const chatbox = this.shadowRoot.querySelector(".chatbox");
-      const chatInput = this.shadowRoot.querySelector(".chat-input textarea");
-      const sendChatBtn = this.shadowRoot.querySelector(".chat-input span");
-      this.shadowRoot.appendChild(chatbox);
-      let userMessage = null; // Variable to store user's message
-      const API_KEY = "PASTE-YOUR-API-KEY"; // Paste your API key here
-      const inputInitHeight = chatInput.scrollHeight;
+  chatSubmit.addEventListener('click', function() {
+    
+    const message = chatInput.value.trim();
+    if (!message) return;
+    
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 
+    chatInput.value = '';
 
-      chatInput.addEventListener("input", () => {
-        // Adjust the height of the input textarea based on its content
-        chatInput.style.height = `${inputInitHeight}px`;
-        chatInput.style.height = `${chatInput.scrollHeight}px`;
-      });
+    onUserRequest(message);
 
-      chatInput.addEventListener("keydown", (e) => {
-        // If Enter key is pressed without Shift key and the window 
-        // width is greater than 800px, handle the chat
-        if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
-          e.preventDefault();
-          this.handleChat();
-        }
-      });
+  });
 
-      sendChatBtn.addEventListener("click", this.handleChat);  //////////////// might not be corret... maybe the class of the button is needed instead "document.body"////////////////
-      closeBtn.addEventListener("click", () => {
-        const class_1 = this.shadowRoot.querySelector("show-chatbot");
-        class_1.classList.toggle("show-chatbot");
-      });
-      chatbotToggler.addEventListener("click", () => {
-        const class_1 = this.shadowRoot.querySelector("show-chatbot");
-        class_1.classList.toggle("show-chatbot");
-      });
-      this.shadowRoot.appendChild(chatbotToggler);
+  chatInput.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+      chatSubmit.click();
+    }
+  });
+
+  chatBubble.addEventListener('click', function() {
+    togglePopup();
+  });
+
+  closePopup.addEventListener('click', function() {
+    togglePopup();
+  });
+  
+  }
+    togglePopup() {
+      const chatPopup = document.getElementById('chat-popup');
+      chatPopup.classList.toggle('hidden');
+      if (!chatPopup.classList.contains('hidden')) {
+        document.getElementById('chat-input').focus();
+      }
     }
 
+    onUserRequest(message) {
+      // Handle user request here
+      console.log('User request:', message);
+    
+      // Display user message
+      const messageElement = document.createElement('div');
+      messageElement.className = 'flex justify-end mb-3';
+      messageElement.innerHTML = `
+        <div class="bg-gray-800 text-white rounded-lg py-2 px-4 max-w-[70%]">
+          ${message}
+        </div>
+      `;
+      chatMessages.appendChild(messageElement);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+      chatInput.value = '';
+    
+      // Reply to the user
+      setTimeout(function() {
+        reply('Hello! This is a sample reply.');
+      }, 1000);
+    }
+
+    reply(message) {
+      const chatMessages = document.getElementById('chat-messages');
+      const replyElement = document.createElement('div');
+      replyElement.className = 'flex mb-3';
+      replyElement.innerHTML = `
+        <div class="bg-gray-200 text-black rounded-lg py-2 px-4 max-w-[70%]">
+          ${message}
+        </div>
+      `;
+      chatMessages.appendChild(replyElement);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+  
     onCustomWidgetBeforeUpdate(changedProperties) {
       this._props = {
         ...this._props,

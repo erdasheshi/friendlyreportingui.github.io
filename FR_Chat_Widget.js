@@ -434,6 +434,11 @@
       }
     }
 
+    toggleChatBot(shouldShow) {
+      const isChatBotVisible = document.body.classList.contains("show-chatbot");
+      document.body.classList.toggle("show-chatbot", !isChatBotVisible);
+    }
+
     //this.shadowRoot done
     handleChat = () => {
       this.userMessage = this.chatInput.value.trim(); // Get user entered message and remove extra whitespace

@@ -19,15 +19,15 @@
         /* Adjust the space between elements */
       }
 
-      // body {
-      //   overflow-y: scroll;
-      //   display: flex;
-      //   align-items: center;
-      //   justify-content: center;
-      //   height: 100%;
-      //   margin: 0;
-      //   background-color: black;
-      // }
+      body {
+        overflow-y: scroll;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        background-color: black;
+      }
 
       .chatbot-toggler {
         position: fixed;
@@ -349,6 +349,7 @@
 
       chatbotToggler.addEventListener("click", () => {
         console.log("Inside toggler", this.shadowRoot);
+        console.log("Body ? ", document.body);
         //this.toggleChatBot();
         const class_1 = this.shadowRoot.querySelector(".show-chatbot");
         console.log(class_1.classList);
@@ -449,10 +450,10 @@
       }
     }
 
-    // toggleChatBot() {
-    //   const isChatBotVisible = document.body.classList.contains("show-chatbot");
-    //   document.body.classList.toggle("show-chatbot", !isChatBotVisible);
-    // }
+    toggleChatBot() {
+      const isChatBotVisible = document.body.classList.contains("show-chatbot");
+      document.body.classList.toggle("show-chatbot", !isChatBotVisible);
+    }
 
     //this.shadowRoot done
     handleChat = () => {

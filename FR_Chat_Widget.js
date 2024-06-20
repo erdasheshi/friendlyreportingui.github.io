@@ -259,27 +259,27 @@
 <!-- Chat window -->
 <div id="body">
   <div class = "window-container">
-  <!-- Chat button -->
-  <button class="chatbot-toggler">
-      <span class="material-symbols-rounded">Chat</span>
-      <span class="material-symbols-outlined">Close</span>
-  </button>
-  <div class="chatbot">
-      <header>
-          <h2>Digital Assistant</h2>
-          <span class="close-btn material-symbols-outlined">Close</span>
-      </header>
-      <ul class="chatbox">
-          <li class="chat incoming">
+      <!-- Chat button -->
+      <button class="chatbot-toggler">
+        <span class="material-symbols-rounded">Chat</span>
+        <span class="material-symbols-outlined">Close</span>
+      </button>
+      <div class="chatbot">
+          <header>
+            <h2>Digital Assistant</h2>
+            <span class="close-btn material-symbols-outlined">Close</span>
+          </header>
+          <ul class="chatbox">
+            <li class="chat incoming">
               <span class="material-symbols-outlined">smart_toy</span>
               <p>Hi there 👋<br>How can I help you today?</p>
-          </li>
-      </ul>
-      <div class="chat-input">
-          <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
-          <span id="send-btn" class="material-symbols-rounded">send</span>
-      </div>
-    </div>
+            </li>
+          </ul>
+          <div class="chat-input">
+            <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+          </div>
+       </div>
   </div>
 </div>
 `;

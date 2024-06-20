@@ -5,28 +5,11 @@
 <style>
       /*------------------------- ChatBot -------------------------*/
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        color: rgb(182, 134, 21);
-      }
-
       .window-container {
         display: flex;
         flex-direction: column;
         gap: 10px;
         /* Adjust the space between elements */
-      }
-
-      body {
-        overflow-y: scroll;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        margin: 0;
-        background-color: black;
       }
 
       .chatbot-toggler {
@@ -52,11 +35,11 @@
       }
 
       .chatbot-toggler span:nth-child(2),
-      .window-container .chatbot-toggler span:nth-child(1) {
+      .show-chatbot .chatbot-toggler span:nth-child(1) {
         opacity: 0;
       }
 
-      .window-container .chatbot-toggler span:nth-child(2) {
+      .show-chatbot .chatbot-toggler span:nth-child(2) {
         opacity: 1;
       }
 
@@ -70,7 +53,6 @@
 
       .chatbot-toggler .chatbot-label {
         color: rgb(182, 134, 21);
-
       }
 
       .chatbot {
@@ -90,7 +72,7 @@
         transition: all 0.1s ease;
       }
 
-      .window-container .chatbot {
+      .show-chatbot .chatbot {
         opacity: 1;
         pointer-events: auto;
         transform: scale(1);
@@ -275,30 +257,31 @@
 
 
 <!-- Chat window -->
+<div id="body">
   <div class = "window-container">
-    <div class="chatbot">
-        <header>
-            <h2>Digital Assistant</h2>
-            <span class="close-btn material-symbols-outlined">Close</span>
-        </header>
-        <ul class="chatbox">
-            <li class="chat incoming">
-                <span class="material-symbols-outlined">smart_toy</span>
-                <p>Hi there 👋<br>How can I help you today?</p>
-            </li>
-        </ul>
-        <div class="chat-input">
-            <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
-            <span id="send-btn" class="material-symbols-rounded">send</span>
-        </div>
-        <!-- Chat button -->
-    <button class="chatbot-toggler">
-        <span class="material-symbols-rounded">Chat</span>
-        <span class="material-symbols-outlined">Close</span>
-    </button>
+  <!-- Chat button -->
+  <button class="chatbot-toggler">
+      <span class="material-symbols-rounded">Chat</span>
+      <span class="material-symbols-outlined">Close</span>
+  </button>
+  <div class="chatbot">
+      <header>
+          <h2>Digital Assistant</h2>
+          <span class="close-btn material-symbols-outlined">Close</span>
+      </header>
+      <ul class="chatbox">
+          <li class="chat incoming">
+              <span class="material-symbols-outlined">smart_toy</span>
+              <p>Hi there 👋<br>How can I help you today?</p>
+          </li>
+      </ul>
+      <div class="chat-input">
+          <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
+          <span id="send-btn" class="material-symbols-rounded">send</span>
+      </div>
     </div>
   </div>
-
+</div>
 `;
   class Widget extends HTMLElement {
     constructor() {
@@ -343,17 +326,18 @@
 
       sendChatBtn.addEventListener("click", this.handleChat);  //////////////// might not be corret... maybe the class of the button is needed instead "document.body"////////////////
       closeBtn.addEventListener("click", () => {
-        const class_1 = this.shadowRoot.querySelector("window-container");
-        class_1.classList.toggle("window-container");
+        const class_1 = this.shadowRoot.getElementById("body");
+        class_1.classList.toggle("show-chatbot");
       });
 
       chatbotToggler.addEventListener("click", () => {
         console.log("Inside toggler", this.shadowRoot);
         console.log("Body ? ", document.body);
         //this.toggleChatBot();
-        const class_1 = this.shadowRoot.querySelector(".window-container");
+        const class_1 = this.shadowRoot.getElementById("body");
         console.log(class_1.classList);
-        class_1.classList.toggle("window-container");
+        class_1.classList.toggle("show-chatbot");
+        console.log(class_1.classList);
       });
     }
 
@@ -450,10 +434,10 @@
       }
     }
 
-    toggleChatBot() {
-      const isChatBotVisible = document.body.classList.contains("window-container");
-      document.body.classList.toggle("window-container", !isChatBotVisible);
-    }
+    // toggleChatBot() {
+    //   const isChatBotVisible = document.body.classList.contains("show-chatbot");
+    //   document.body.classList.toggle("show-chatbot", !isChatBotVisible);
+    // }
 
     //this.shadowRoot done
     handleChat = () => {

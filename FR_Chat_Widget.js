@@ -279,7 +279,7 @@
             <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
             <span id="send-btn" class="material-symbols-rounded">send</span>
           </div>
-       </div>
+      </div>
   </div>
 </div>
 `;
@@ -293,7 +293,7 @@
 
     }
     async connectedCallback() {
-      this.initMain();
+      //this.initMain();
     }
     async initMain() {
       /*------------------------------- Digital Chat ----------------------------------------- */

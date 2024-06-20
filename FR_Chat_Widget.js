@@ -332,11 +332,10 @@
 
       chatbotToggler.addEventListener("click", () => {
         console.log("Inside toggler", this.shadowRoot);
-        console.log("Body ? ", document.body);
-        //this.toggleChatBot();
-        const class_1 = this.shadowRoot.getElementById("body");
-        console.log(class_1.classList);
-        class_1.classList.toggle("show-chatbot");
+        this.toggleChatBot();
+        //const class_1 = this.shadowRoot.getElementById("body");
+       
+        //class_1.classList.toggle("show-chatbot");
         console.log(class_1.classList);
       });
     }
@@ -434,10 +433,10 @@
       }
     }
 
-    // toggleChatBot() {
-    //   const isChatBotVisible = document.body.classList.contains("show-chatbot");
-    //   document.body.classList.toggle("show-chatbot", !isChatBotVisible);
-    // }
+    toggleChatBot() {
+      const isChatBotVisible = this.shadowRoot.getElementById("body").classList.contains("show-chatbot");
+      this.shadowRoot.getElementById("body").classList.toggle("show-chatbot", !isChatBotVisible);
+    }
 
     //this.shadowRoot done
     handleChat = () => {

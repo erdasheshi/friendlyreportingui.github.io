@@ -5,6 +5,13 @@
 <style>
       /*------------------------- ChatBot -------------------------*/
 
+      div {
+        overflow-y: auto;
+        margin: 0.5rem auto;
+        max-width: 100%;
+        width: 100%;
+      }
+
       .window-container {
         display: flex;
         flex-direction: column;
@@ -252,6 +259,17 @@
         background-color: #e2e6ea;
         /* Darker grey on hover */
       }
+
+      #body {
+        overflow-y: scroll;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        background-color: black;
+      }
+
 </style>
 
 

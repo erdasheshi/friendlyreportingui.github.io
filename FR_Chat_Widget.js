@@ -335,6 +335,7 @@
         
       shadowRoot.appendChild(template.content.cloneNode(true));
       this._props = {};
+      let userMessage = null; // Variable to store user's message
 
     }
     async connectedCallback() {
@@ -348,22 +349,27 @@
       const chatbox = this.shadowRoot.querySelector(".chatbox");
       const chatInput = this.shadowRoot.querySelector(".chat-input textarea");
       const sendChatBtn = this.shadowRoot.querySelector(".chat-input span");
-      //const inputInitHeight = this.chatInput.scrollHeight;
-      let userMessage = null; // Variable to store user's message
+      
+      
       const API_KEY = "PASTE-YOUR-API-KEY"; // Paste your API key here
       
 
-      sendChatBtn.addEventListener("click", this.handleChat);  //////////////// might not be corret... maybe the class of the button is needed instead "document.body"////////////////
-      
+      chatbotToggler.addEventListener("click", () => {
+        this.toggleChatBot();
+        const class_1 = this.shadowRoot.getElementById("body");
+        console.log(class_1.classList);
+      });
+
+      closeBtn.addEventListener("click", () => {
+        const class_1 = this.shadowRoot.getElementById("body");
+        class_1.classList.toggle("show-chatbot");
+      });
 
       chatInput.addEventListener("input", () => {
         // Adjust the height of the input textarea based on its content
-        this.chatInput.style.height = 'auto';
-        
-        this.chatInput.style.height = `${chatInput.scrollHeight}px`;
+        chatInput.style.height = 'auto';
+        chatInput.style.height = `${chatInput.scrollHeight}px`;
       });
-
-      
 
       chatInput.addEventListener("keydown", (e) => {
         // If Enter key is pressed without Shift key and the window 
@@ -374,17 +380,8 @@
         }
       });
 
-      closeBtn.addEventListener("click", () => {
-        const class_1 = this.shadowRoot.getElementById("body");
-        class_1.classList.toggle("show-chatbot");
-      });
-
-      chatbotToggler.addEventListener("click", () => {
-        console.log("Inside toggler", this.shadowRoot);
-        this.toggleChatBot();
-        const class_1 = this.shadowRoot.getElementById("body");
-        console.log(class_1.classList);
-      });
+      sendChatBtn.addEventListener("click", this.handleChat);  
+ 
     }
 
     
@@ -406,7 +403,7 @@
     createChatLi = (message, className) => {
       // Create a chat <li> element with passed message and className
       const chatLi = document.createElement("li");
-      this.shadowRoot.appendChild(chatLi); /////////////// Is this needed ??? ////////////
+      this.shadowRoot.querySelector(".chatbox").appendChild(chatLi); 
 
       chatLi.classList.add("chat", `${className}`);
       let chatContent = className === "outgoing" ? `<p></p>` : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
@@ -483,7 +480,6 @@
     }
 
     toggleChatBot() {
-      
       const isChatBotVisible = this.shadowRoot.getElementById("body").classList.contains("show-chatbot");
       console.log("is chat bot visible (before): ", isChatBotVisible);
       this.shadowRoot.getElementById("body").classList.toggle("show-chatbot", !isChatBotVisible);
@@ -492,16 +488,18 @@
 
     //this.shadowRoot done
     handleChat = () => {
-      this.userMessage = this.chatInput.value.trim(); // Get user entered message and remove extra whitespace
+      const chatInput = this.shadowRoot.querySelector(".chat-input textarea");
+      this.userMessage = chatInput.value.trim(); // Get user entered message and remove extra whitespace
       if (!this.userMessage) return;
 
       // Clear the input textarea and set its height to default
-      this.chatInput.value = "";
-      this.chatInput.style.height = `${inputInitHeight}px`;
+      chatInput.value = "";
+      chatInput.style.height = `${chatInput.scrollHeight}px`;
 
       // Append the user's message to the chatbox
-      this.chatbox.appendChild(createChatLi(this.userMessage, "outgoing"));
-      this.chatbox.scrollTo(0, this.chatbox.scrollHeight);
+      const chatbox = this.shadowRoot.querySelector(".chatbox");
+      chatbox.appendChild(createChatLi(this.userMessage, "outgoing"));
+      chatbox.scrollTo(0, this.chatbox.scrollHeight);
 
       // remove option buttons if they already exist
       if (this.shadowRoot.querySelector(".options-container")) { this.shadowRoot.querySelector(".options-container").remove(); }
@@ -512,7 +510,7 @@
     //this.shadowRoot done
     // Function to append 'intention' buttons
     appendOptionButtons = () => {
-
+      const chatbox = this.shadowRoot.querySelector(".chatbox");
       const options = ['Dashboard Navigation', 'Conceptual Question', 'Data Analytics'];
       const optionsContainer = document.createElement("div");
       optionsContainer.className = "options-container";
@@ -525,16 +523,17 @@
         optionsContainer.appendChild(button);
       });
 
-      this.chatbox.appendChild(optionsContainer);
-      this.chatbox.scrollTo(0, this.chatbox.scrollHeight);
+      chatbox.appendChild(optionsContainer);
+      chatbox.scrollTo(0, this.chatbox.scrollHeight);
     }
 
     //this.shadowRoot done
     // Handle option button click
     handleOptionClick = (option) => {
+      const chatbox = this.shadowRoot.querySelector(".chatbox");
       const incomingChatLi = this.createChatLi("", "incoming");
-      this.chatbox.appendChild(incomingChatLi);
-      this.chatbox.scrollTo(0, this.chatbox.scrollHeight);
+      chatbox.appendChild(incomingChatLi);
+      chatbox.scrollTo(0, chatbox.scrollHeight);
 
       // Remove intention buttons after selection
       this.shadowRoot.querySelector(".options-container").remove();

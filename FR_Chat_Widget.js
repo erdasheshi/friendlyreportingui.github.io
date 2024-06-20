@@ -333,7 +333,7 @@
       chatbotToggler.addEventListener("click", () => {
         console.log("Inside toggler", this.shadowRoot);
         this.toggleChatBot();
-        //const class_1 = this.shadowRoot.getElementById("body");
+        const class_1 = this.shadowRoot.getElementById("body");
        
         //class_1.classList.toggle("show-chatbot");
         console.log(class_1.classList);

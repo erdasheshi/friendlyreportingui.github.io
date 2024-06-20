@@ -293,7 +293,7 @@
 
     }
     async connectedCallback() {
-      this.initMain();
+      //this.initMain();
     }
     async initMain() {
       /*------------------------------- Digital Chat ----------------------------------------- */

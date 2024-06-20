@@ -85,7 +85,7 @@
         transform: scale(1);
       }
 
-      .chatbot header {
+      .show-chatbot .chatbot header {
         padding: 16px 0;
         position: relative;
         text-align: center;
@@ -94,7 +94,7 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
-      .chatbot header span {
+      .show-chatbot .chatbot header span {
         position: absolute;
         right: 15px;
         top: 50%;
@@ -108,37 +108,37 @@
         color: white;
       }
 
-      .chatbot .chatbox {
+      .show-chatbot .chatbot .chatbox {
         overflow-y: auto;
         height: 510px;
         padding: 30px 20px 100px;
       }
 
-      .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
+      .show-chatbot .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
         width: 6px;
       }
 
-      .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
+      .show-chatbot .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
         background: #fff;
         border-radius: 25px;
       }
 
-      .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
+      .show-chatbot .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
         background: #ccc;
         border-radius: 25px;
       }
 
-      .chatbox .chat {
+      .show-chatbot .chatbox .chat {
         display: flex;
         list-style: none;
       }
 
-      .chatbox .outgoing {
+      .show-chatbot .chatbox .outgoing {
         margin: 20px 0;
         justify-content: flex-end;
       }
 
-      .chatbox .incoming span {
+      .show-chatbot .chatbox .incoming span {
         width: 32px;
         height: 32px;
         color: #fff;
@@ -151,7 +151,7 @@
         margin: 0 10px 7px 0;
       }
 
-      .chatbox .chat p {
+      .show-chatbot .chatbox .chat p {
         white-space: normal;
         word-wrap: break-word;
         padding: 12px 16px;
@@ -162,21 +162,18 @@
         background: #568912;
       }
 
-      .chatbox .incoming p {
-        border-radius: 10px 10px 10px 0;
-      }
-
-      .chatbox .chat p.error {
+      .show-chatbot .chatbox .chat p.error {
         color: #721c24;
         background: #f8d7da;
       }
 
-      .chatbox .incoming p {
+      .show-chatbot .chatbox .incoming p {
         color: #000;
         background: #f2f2f2;
+        border-radius: 10px 10px 10px 0;
       }
 
-      .chatbot .chat-input {
+      .show-chatbot .chatbot .chat-input {
         display: flex;
         gap: 5px;
         position: absolute;
@@ -187,7 +184,7 @@
         border-top: 1px solid #ddd;
       }
 
-      .chat-input textarea {
+      .show-chatbot .chat-input textarea {
         height: 55px;
         width: 100%;
         border: none;
@@ -198,7 +195,7 @@
         font-size: 0.95rem;
       }
 
-      .chat-input span {
+      .show-chatbot .chat-input span {
         align-self: flex-end;
         color: #568912;
         cursor: pointer;
@@ -209,11 +206,11 @@
         font-size: 1.35rem;
       }
 
-      .chat-input textarea:valid~span {
+      .show-chatbot .chat-input textarea:valid~span {
         visibility: visible;
       }
 
-      .options-container {
+      .show-chatbot .options-container {
         display: flex;
         justify-content: center;
         gap: 5px;
@@ -223,7 +220,7 @@
         margin-bottom: 1rem;
       }
 
-      .options-sentence {
+      .show-chatbot .options-sentence {
         font-size: 0.7rem;
         /* Example font size, adjust as needed */
         color: #333;
@@ -232,7 +229,7 @@
         /* Ensure there's some space before the buttons */
       }
 
-      .option-button {
+      .show-chatbot .option-button {
         padding: 0px 5px;
         font-size: 0.7rem;
         border-radius: 5px;
@@ -243,19 +240,19 @@
       }
 
       /* Individual styles for each button to have different border colors */
-      .option-button:nth-child(1) {
+      .show-chatbot .option-button:nth-child(1) {
         border-color: #007bff;
       }
 
-      .option-button:nth-child(2) {
+      .show-chatbot .option-button:nth-child(2) {
         border-color: #caa228;
       }
 
-      .option-button:nth-child(3) {
+      .show-chatbot .option-button:nth-child(3) {
         border-color: #3e9c54;
       }
 
-      .option-button:hover {
+      .show-chatbot .option-button:hover {
         background-color: #e2e6ea;
         /* Darker grey on hover */
       }
@@ -267,7 +264,7 @@
         justify-content: center;
         height: 100%;
         margin: 0;
-        background-color: black;
+        background-color: grey;
       }
 
 </style>

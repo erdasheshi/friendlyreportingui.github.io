@@ -348,10 +348,10 @@
       const chatbox = this.shadowRoot.querySelector(".chatbox");
       const chatInput = this.shadowRoot.querySelector(".chat-input textarea");
       const sendChatBtn = this.shadowRoot.querySelector(".chat-input span");
-      
+      //const inputInitHeight = this.chatInput.scrollHeight;
       let userMessage = null; // Variable to store user's message
       const API_KEY = "PASTE-YOUR-API-KEY"; // Paste your API key here
-      const inputInitHeight = this.chatInput.scrollHeight;
+      
 
       sendChatBtn.addEventListener("click", this.handleChat);  //////////////// might not be corret... maybe the class of the button is needed instead "document.body"////////////////
       
@@ -359,6 +359,7 @@
       chatInput.addEventListener("input", () => {
         // Adjust the height of the input textarea based on its content
         this.chatInput.style.height = 'auto';
+        
         this.chatInput.style.height = `${chatInput.scrollHeight}px`;
       });
 

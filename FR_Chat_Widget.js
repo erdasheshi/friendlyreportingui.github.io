@@ -334,8 +334,6 @@
         console.log("Inside toggler", this.shadowRoot);
         this.toggleChatBot();
         const class_1 = this.shadowRoot.getElementById("body");
-       
-        //class_1.classList.toggle("show-chatbot");
         console.log(class_1.classList);
       });
     }
@@ -434,8 +432,11 @@
     }
 
     toggleChatBot() {
+      
       const isChatBotVisible = this.shadowRoot.getElementById("body").classList.contains("show-chatbot");
+      console.log("is chat bot visible (before): ", isChatBotVisible);
       this.shadowRoot.getElementById("body").classList.toggle("show-chatbot", !isChatBotVisible);
+      console.log("is chat bot visible (after): ", !isChatBotVisible);
     }
 
     //this.shadowRoot done

@@ -291,12 +291,12 @@
             <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
             <span id="send-btn" class="material-symbols-rounded">send</span>
         </div>
-    </div>
-    <!-- Chat button -->
+        <!-- Chat button -->
     <button class="chatbot-toggler">
         <span class="material-symbols-rounded">Chat</span>
         <span class="material-symbols-outlined">Close</span>
     </button>
+    </div>
   </div>
 
 `;

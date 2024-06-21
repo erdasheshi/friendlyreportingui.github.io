@@ -78,8 +78,8 @@
         position: fixed;
         bottom: 5%;
         right: 75px;
-        width: 420px;
-        height: 65%
+        width: 37.5em;
+        height: 37.5em;
         background: #fff;
         border-radius: 15px;
         overflow: hidden;

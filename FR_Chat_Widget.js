@@ -80,6 +80,7 @@
         bottom: 5%;
         right: 75px;
         width: 420px;
+        height: 65%
         background: #fff;
         border-radius: 15px;
         overflow: hidden;
@@ -190,6 +191,7 @@
         display: flex;
         gap: 5px;
         width: 100%;
+        height: 15%;
         background: #fff;
         padding: 3px 20px;
         border-top: 1px solid #ddd;
@@ -201,7 +203,7 @@
         border: none;
         outline: none;
         resize: none;
-        max-height: 50%;
+        max-height: 100%;
         padding: 15px 15px 15px 0;
         font-size: 0.95rem;
       }

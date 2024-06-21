@@ -121,7 +121,7 @@
         color: white;
       }
 
-      .chatbot .chatbox {
+      .chatbox {
         overflow-y: auto;
         height: 23em;
         padding: 20px;
@@ -186,7 +186,7 @@
         border-radius: 10px 10px 10px 0;
       }
 
-      .chatbot .chat-input {
+      .chat-input {
         display: flex;
         gap: 5px;
         position: absolute;

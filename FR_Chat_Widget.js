@@ -19,6 +19,14 @@
         /* Adjust the space between elements */
       }
 
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        color: rgb(182, 134, 21);
+      }
+
       .chatbot-toggler {
         position: fixed;
         bottom: 25px;
@@ -257,16 +265,6 @@
         /* Darker grey on hover */
       }
 
-      #body {
-        overflow-y: scroll;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        margin: 0;
-        background-color: grey;
-      }
-
       @media (max-width: 490px) {
         .chatbot-toggler {
             right: auto;
@@ -425,7 +423,7 @@
         },
         body: JSON.stringify(inputParameters)
       };
-      console.log("Inside generateResponse: ", chatElement);
+      
       const messageElement = chatElement.querySelector("p");
       messageElement.textContent = "Thinking...";
 
@@ -433,7 +431,7 @@
         case 'Dashboard Navigation':
           apiUrl = "https://hda-friendly-reporting.me.sap.corp/api/v1/llms/navigation";
 
-          response = await fetch(apiUrl, apiConfig)
+          response = await fetch(apiUrl, apiConfig);
           if (!response.ok) {
             messageElement.classList.add("error");
             messageElement.textContent = `Something went wrong. Fetch Error: ${error}`;
@@ -448,7 +446,7 @@
         case 'Conceptual Question':
           apiUrl = "https://hda-friendly-reporting.me.sap.corp/api/v1/llms/documentation_qa";
 
-          response = await fetch(apiUrl, apiConfig)
+          response = await fetch(apiUrl, apiConfig);
           if (!response.ok) {
             messageElement.classList.add("error");
             messageElement.textContent = `Something went wrong. Fetch Error: ${error}`;
@@ -462,7 +460,7 @@
         case 'Data Analytics':
           apiUrl = "https://hda-friendly-reporting.me.sap.corp/api/v1/llms/nlq";
 
-          response = await fetch(apiUrl, apiConfig)
+          response = await fetch(apiUrl, apiConfig);
           if (!response.ok) {
             messageElement.classList.add("error");
             messageElement.textContent = `Something went wrong. Fetch Error: ${error}`;

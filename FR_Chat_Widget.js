@@ -203,7 +203,6 @@
         border: none;
         outline: none;
         resize: none;
-        max-height: 40em;
         padding: 15px 15px 15px 0;
         font-size: 0.95rem;
       }

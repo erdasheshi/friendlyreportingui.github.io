@@ -18,7 +18,6 @@
         justify-content: center;
         height: 100%;
         margin: 0;
-        background-color: black;
       }
 
       div {
@@ -103,7 +102,7 @@
         transition: all 0.1s ease;
       }
 
-      #body .show-chatbot .chatbot {
+      .show-chatbot .chatbot {
         opacity: 1;
         pointer-events: auto;
         transform: scale(1);

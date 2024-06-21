@@ -7,8 +7,19 @@
       @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
       @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
       @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
       /*------------------------- ChatBot -------------------------*/
+
+      #body {
+        overflow-y: scroll;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        background-color: black;
+      }
 
       div {
         overflow-y: auto;
@@ -25,6 +36,7 @@
       }
 
       * {
+        margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
@@ -78,7 +90,7 @@
         position: fixed;
         bottom: 5%;
         right: 75px;
-        width: 30em;
+        width: 420px;
         background: #fff;
         border-radius: 15px;
         overflow: hidden;
@@ -91,7 +103,7 @@
         transition: all 0.1s ease;
       }
 
-      .show-chatbot .chatbot {
+      #body .show-chatbot .chatbot {
         opacity: 1;
         pointer-events: auto;
         transform: scale(1);
@@ -122,8 +134,8 @@
 
       .chatbot .chatbox {
         overflow-y: auto;
-        height: 23em;
-        padding: 20px;
+        height: 510px;
+        padding: 30px 20px 100px; // might need to change this to 20 px
       }
 
       .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
@@ -197,11 +209,12 @@
       }
 
       .chat-input textarea {
-        max-height: 4em;
+        height: 55px;
         width: 100%;
         border: none;
         outline: none;
         resize: none;
+        max-height: 180px;
         padding: 15px 15px 15px 0;
         font-size: 0.95rem;
       }

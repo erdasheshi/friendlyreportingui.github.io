@@ -426,10 +426,10 @@
         body: JSON.stringify(inputParameters)
       };
 
-      const messageElement = this.chatElement.querySelector("p");
+      const messageElement = chatElement.querySelector("p");
       messageElement.textContent = "Thinking...";
 
-      switch (this.optionBtn) {
+      switch (optionBtn) {
         case 'Dashboard Navigation':
           apiUrl = "https://hda-friendly-reporting.me.sap.corp/api/v1/llms/navigation";
 

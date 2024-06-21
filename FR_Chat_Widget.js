@@ -25,7 +25,6 @@
       }
 
       * {
-        margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
@@ -121,7 +120,7 @@
         color: white;
       }
 
-      .chatbox {
+      .chatbot .chatbox {
         overflow-y: auto;
         height: 23em;
         padding: 20px;
@@ -186,7 +185,7 @@
         border-radius: 10px 10px 10px 0;
       }
 
-      .chat-input {
+      .chatbot .chat-input {
         display: flex;
         gap: 5px;
         position: absolute;

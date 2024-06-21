@@ -498,7 +498,7 @@
 
       // Append the user's message to the chatbox
       const chatbox = this.shadowRoot.querySelector(".chatbox");
-      chatbox.appendChild(createChatLi(this.userMessage, "outgoing"));
+      chatbox.appendChild(this.createChatLi(this.userMessage, "outgoing"));
       chatbox.scrollTo(0, this.chatbox.scrollHeight);
 
       // remove option buttons if they already exist

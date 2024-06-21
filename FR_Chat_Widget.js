@@ -11,7 +11,6 @@
       /*------------------------- ChatBot -------------------------*/
 
       div {
-        overflow-y: auto;
         margin: 0.5rem auto;
         max-width: 100%;
         width: 100%;
@@ -123,8 +122,8 @@
       }
 
       .chatbot .chatbox {
-        overflow-y: auto;
-        height: 510px;
+        overflow-y: scroll;
+        height: 23em;
         padding: 20px;
       }
 

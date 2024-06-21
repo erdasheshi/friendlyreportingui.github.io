@@ -119,7 +119,7 @@
       .chatbot .chatbox {
         overflow-y: auto;
         height: 510px;
-        padding: 30px 20px 100px;
+        padding: 20px;
       }
 
       .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
@@ -184,8 +184,6 @@
       .chatbot .chat-input {
         display: flex;
         gap: 5px;
-        position: absolute;
-        bottom: 0;
         width: 100%;
         background: #fff;
         padding: 3px 20px;
@@ -193,12 +191,12 @@
       }
 
       .chat-input textarea {
-        height: 55px;
+        height: 20%;
         width: 100%;
         border: none;
         outline: none;
         resize: none;
-        max-height: 180px;
+        max-height: 50%;
         padding: 15px 15px 15px 0;
         font-size: 0.95rem;
       }

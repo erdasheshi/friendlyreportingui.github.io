@@ -346,7 +346,6 @@
 
       const chatbotToggler = this.shadowRoot.querySelector(".chatbot-toggler");
       const closeBtn = this.shadowRoot.querySelector(".close-btn");
-      const chatbox = this.shadowRoot.querySelector(".chatbox");
       const chatInput = this.shadowRoot.querySelector(".chat-input textarea");
       const sendChatBtn = this.shadowRoot.querySelector(".chat-input span");
       
@@ -416,6 +415,7 @@
       let apiUrl = null;
       let response = null;
 
+      const chatbox = this.shadowRoot.querySelector(".chatbox");
       const inputParameters = { user_prompt: this.userMessage };
       const apiConfig = {
         method: "POST",
@@ -443,7 +443,7 @@
             // Interpret HTML tags in the output_guide
             messageElement.innerHTML = DOMPurify.sanitize(data.output_guide);
           }
-          this.chatbox.scrollTo(0, this.chatbox.scrollHeight);
+          chatbox.scrollTo(0, chatbox.scrollHeight);
           break;
         case 'Conceptual Question':
           apiUrl = "https://hda-friendly-reporting.me.sap.corp/api/v1/llms/documentation_qa";
@@ -457,7 +457,7 @@
             const data = await response.json();
             messageElement.textContent = data.documentation;
           }
-          this.chatbox.scrollTo(0, this.chatbox.scrollHeight);
+          chatbox.scrollTo(0, chatbox.scrollHeight);
           break;
         case 'Data Analytics':
           apiUrl = "https://hda-friendly-reporting.me.sap.corp/api/v1/llms/nlq";
@@ -471,7 +471,7 @@
             const data = await response.json();
             messageElement.textContent = data.answer;
           }
-          this.chatbox.scrollTo(0, this.chatbox.scrollHeight);
+          chatbox.scrollTo(0, chatbox.scrollHeight);
           break;
         default:
           messageElement.textContent = "Option not recognized.";
@@ -499,7 +499,7 @@
       // Append the user's message to the chatbox
       const chatbox = this.shadowRoot.querySelector(".chatbox");
       chatbox.appendChild(this.createChatLi(this.userMessage, "outgoing"));
-      chatbox.scrollTo(0, this.chatbox.scrollHeight);
+      chatbox.scrollTo(0, chatbox.scrollHeight);
 
       // remove option buttons if they already exist
       if (this.shadowRoot.querySelector(".options-container")) { this.shadowRoot.querySelector(".options-container").remove(); }
@@ -524,7 +524,7 @@
       });
 
       chatbox.appendChild(optionsContainer);
-      chatbox.scrollTo(0, this.chatbox.scrollHeight);
+      chatbox.scrollTo(0, chatbox.scrollHeight);
     }
 
     //this.shadowRoot done

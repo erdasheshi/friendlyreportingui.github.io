@@ -11,6 +11,7 @@
       /*------------------------- ChatBot -------------------------*/
 
       div {
+        overflow-y: auto;
         margin: 0.5rem auto;
         max-width: 100%;
         width: 100%;
@@ -79,7 +80,6 @@
         bottom: 5%;
         right: 75px;
         width: 37.5em;
-        height: 37.5em;
         background: #fff;
         border-radius: 15px;
         overflow: hidden;
@@ -122,7 +122,7 @@
       }
 
       .chatbot .chatbox {
-        overflow-y: scroll;
+        overflow-y: auto;
         height: 23em;
         padding: 20px;
       }
@@ -189,20 +189,21 @@
       .chatbot .chat-input {
         display: flex;
         gap: 5px;
+        position: absolute;
+        bottom: 0;
         width: 100%;
-        height: 15%;
         background: #fff;
         padding: 3px 20px;
         border-top: 1px solid #ddd;
       }
 
       .chat-input textarea {
-        height: 20%;
+        height: 25em;
         width: 100%;
         border: none;
         outline: none;
         resize: none;
-        max-height: 100%;
+        max-height: 40em;
         padding: 15px 15px 15px 0;
         font-size: 0.95rem;
       }

@@ -79,7 +79,7 @@
         position: fixed;
         bottom: 5%;
         right: 75px;
-        width: 37.5em;
+        width: 30em;
         background: #fff;
         border-radius: 15px;
         overflow: hidden;
@@ -198,7 +198,7 @@
       }
 
       .chat-input textarea {
-        height: 25em;
+        max-height: 4em;
         width: 100%;
         border: none;
         outline: none;

@@ -425,7 +425,7 @@
         },
         body: JSON.stringify(inputParameters)
       };
-
+      console.log("Inside generateResponse: ", chatElement);
       const messageElement = chatElement.querySelector("p");
       messageElement.textContent = "Thinking...";
 

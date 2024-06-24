@@ -1,0 +1,28 @@
+{
+    "id": "DataInsightsWidget",
+    "newInstancePrefix": "Data_Insights_Widget",
+	"eula": "",
+	"license": "",
+    "version": "1.0.0",
+    "name": "DI_widget",
+    "description": "Data Insights Widget",
+    "vendor": "SAP Friendly Reporting",
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "external_di_widget",
+            "url": "https://erdasheshi.github.io/friendlyreportingui.github.io/DI_widget.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+    },
+    "methods": {
+    },
+    "events": {
+        "onClick": {
+            "description": "User Clicked."
+        }
+    }
+}

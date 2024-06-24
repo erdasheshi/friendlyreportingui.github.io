@@ -11,6 +11,19 @@
 
       /*------------------------- ChatBot -------------------------*/
 
+      :host {
+          position: relative;
+      }
+
+      root-in-shadow {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+      }    
+
       #body {
         overflow-y: scroll;
         display: flex;
@@ -92,7 +105,6 @@
         width: 420px;
         background: #fff;
         border-radius: 15px;
-        overflow: hidden;
         opacity: 0;
         pointer-events: none;
         transform: scale(0.5);
@@ -393,6 +405,8 @@
       });
 
       sendChatBtn.addEventListener("click", this.handleChat);  
+
+      
  
     }
 

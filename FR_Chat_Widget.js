@@ -11,25 +11,12 @@
 
       /*------------------------- ChatBot -------------------------*/
 
-      :host {
-          position: relative;
-      }
-
-      root-in-shadow {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-      }    
-
       #body {
         overflow-y: scroll;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100%;
+        //height: 100%;
         margin: 0;
       }
 
@@ -61,7 +48,7 @@
         right: 35px;
         outline: none;
         border: none;
-        height: 50px;
+        //height: 50px;
         width: 50px;
         display: flex;
         cursor: pointer;
@@ -105,6 +92,7 @@
         width: 420px;
         background: #fff;
         border-radius: 15px;
+        overflow: hidden;
         opacity: 0;
         pointer-events: none;
         transform: scale(0.5);
@@ -175,7 +163,7 @@
 
       .chatbox .incoming span {
         width: 32px;
-        height: 32px;
+        //height: 32px;
         color: #fff;
         cursor: default;
         text-align: center;
@@ -220,7 +208,7 @@
       }
 
       .chat-input textarea {
-        height: 55px;
+        //height: 55px;
         width: 100%;
         border: none;
         outline: none;
@@ -234,7 +222,7 @@
         align-self: flex-end;
         color: #568912;
         cursor: pointer;
-        height: 55px;
+       // height: 55px;
         display: flex;
         align-items: center;
         visibility: hidden;
@@ -327,14 +315,14 @@
 
 
 <!-- Chat window -->
-<div id="body">
-  <div class = "window-container">
+<div id="body" horizontal layout wrap flex>
+  <div class = "window-container" horizontal layout center>
       <!-- Chat button -->
       <button class="chatbot-toggler">
         <span class="material-symbols-rounded">Chat</span>
         <span class="material-symbols-outlined">Close</span>
       </button>
-      <div class="chatbot">
+      <div class="chatbot" vertical layout>
           <header>
             <h2>Digital Assistant</h2>
             <span class="close-btn material-symbols-outlined">Close</span>
@@ -405,8 +393,6 @@
       });
 
       sendChatBtn.addEventListener("click", this.handleChat);  
-
-      
  
     }
 

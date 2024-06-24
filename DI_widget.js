@@ -504,5 +504,5 @@
         });
       }
     }
-    customElements.define("external_di_widget", Widget);
+    customElements.define("external-di-widget", Widget);
   })();

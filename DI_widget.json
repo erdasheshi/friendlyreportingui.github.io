@@ -10,7 +10,7 @@
     "webcomponents": [
         {
             "kind": "main",
-            "tag": "external_di_widget",
+            "tag": "external-di-widget",
             "url": "https://erdasheshi.github.io/friendlyreportingui.github.io/DI_widget.js",
             "integrity": "",
             "ignoreIntegrity": true

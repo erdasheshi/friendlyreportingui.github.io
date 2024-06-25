@@ -4,20 +4,6 @@
   
   <style>
   
-        html {
-          overflow-y: scroll;
-        }
-  
-        body {
-          overflow-y: scroll;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 100%;
-          margin: 0;
-          background-color: black;
-        }
-  
         .window-container {
           display: flex;
           flex-direction: column;

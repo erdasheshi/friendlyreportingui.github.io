@@ -340,7 +340,9 @@
           </header>
           <ul class="chatbox">
             <li class="chat incoming">
-              <span class="material-symbols-outlined">smart_toy</span>
+              <span class="chat_button_wrapper material-symbols-outlined">
+                <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_response.png"/>
+              </span>
               <p>Hi there 👋<br>How can I help you today?</p>
             </li>
           </ul>

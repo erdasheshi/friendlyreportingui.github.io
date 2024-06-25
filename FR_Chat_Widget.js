@@ -319,13 +319,13 @@
   <div class = "window-container">
       <!-- Chat button -->
       <button class="chatbot-toggler">
-        <span class="material-symbols-rounded">Chat</span>
-        <span class="material-symbols-outlined">Close</span>
+        <img src="https://erdasheshi.github.io/fr.github.io/DI_chat.png" class="material-symbols-rounded"/>
+        <img src="https://erdasheshi.github.io/fr.github.io/DI_close.png" class="material-symbols-outlined"/>
       </button>
       <div class="chatbot">
           <header>
             <h2>Digital Assistant</h2>
-            <span class="close-btn material-symbols-outlined">Close</span>
+            <img src="https://erdasheshi.github.io/fr.github.io/DI_close.png" class="material-symbols-outlined"/>
           </header>
           <ul class="chatbox">
             <li class="chat incoming">
@@ -494,9 +494,7 @@
 
     toggleChatBot() {
       const isChatBotVisible = this.shadowRoot.getElementById("body").classList.contains("show-chatbot");
-      console.log("is chat bot visible (before): ", isChatBotVisible);
       this.shadowRoot.getElementById("body").classList.toggle("show-chatbot", !isChatBotVisible);
-      console.log("is chat bot visible (after): ", !isChatBotVisible);
     }
 
     //this.shadowRoot done

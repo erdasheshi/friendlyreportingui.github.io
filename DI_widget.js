@@ -273,7 +273,7 @@
   
   
   </style>
-  <div class="window-container">
+<div class="window-container">
       <!-- Menu & Title -->
       <div class="header">
           <h1 class="title">Data Insights</h1>
@@ -311,7 +311,7 @@
   
       }
       async connectedCallback() {
-        this.initMain();
+        // this.initMain();
       }
       async initMain() {
   
@@ -418,9 +418,11 @@
       //this.shadowRoot done
       populateInsightsUI(data) {
         data.forEach(item => {
+          const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
+
           const itemElement = document.createElement('div');
           itemElement.className = 'insight-element';
-          this.shadowRoot.appendChild(itemElement); /////////////// Is this needed ???  it's attached to favoriteInsightsContainer////////////
+          allInsightsContainer.appendChild(itemElement); /////////////// Is this needed ???  it's attached to favoriteInsightsContainer////////////
   
           // Create the button-title container
           const buttonTitleContainer = document.createElement('div');

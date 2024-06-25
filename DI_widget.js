@@ -283,23 +283,19 @@
           <div id="favorite-insights-container">
               <div class="favorites-header">
                   <h2>Favorites</h2>
-                  <button class="show-all-fav-items-btn">
-                      <span class="btn-wrapper material-symbols-outlined">
-                        <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png"/>
-                      </span>
+                  <button class="show-all-fav-items-btn btn-wrapper">
+                    <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png"/>
                   </button>
                   <hr>
               </div>
           </div>
           <div id="all-insights-container">
               <div class="all-insights-section">
-                  <h2>All Insights</h2>
-                  <button class="show-all-items-btn">
-                      <span class="btn-wrapper material-symbols-outlined">
-                        <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png"/>
-                      </span>
-                  </button>
-                  <hr>
+                <h2>All Insights</h2>
+                <button class="show-all-items-btn btn-wrapper">
+                <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png"/>
+                </button>
+                <hr>
               </div>
           </div>
         </div>

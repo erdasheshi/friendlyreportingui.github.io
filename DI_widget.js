@@ -91,25 +91,6 @@
             height: auto;
         }
   
-        /*------------------------- ??????????????????-------------- -------------------------*/
-  
-        .section {
-          margin-bottom: 20px;
-        }
-  
-        .section-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: rgb(232, 171, 17)
-        }
-  
-        .section-header h2 {
-          margin: 0;
-          /* Remove default margin to eliminate space around the title */
-          color: rgb(232, 171, 17)
-        }
-  
         hr {
           border: 0;
           height: 1px;
@@ -153,6 +134,11 @@
           margin-right: 10px;
           margin-bottom: 0;
         }*/
+
+        .header h2 {
+            font-size: 1.4rem;
+            color: white;
+        }
   
         #add-item-btn,
         #all-items-btn {
@@ -392,8 +378,6 @@
         menuBar.appendChild(infoBtn);
         menuBar.appendChild(searchBtn);
         menuBar.appendChild(supportChannelBtn);
-  
-        this.shadowRoot.appendChild(menuBar);
   
       }
 

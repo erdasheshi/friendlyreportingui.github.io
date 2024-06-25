@@ -82,7 +82,12 @@
         }
 
         .di-menu-wrapper img{
-            width: 100%;
+            width: 50%;
+            height: auto;
+        }
+
+        .btn-wrapper img{
+            width: 50%;
             height: auto;
         }
   
@@ -298,7 +303,7 @@
               <div class="all-insights-section">
                   <h2>All Insights</h2>
                   <button id="all-items-btn">
-                      <span class="material-symbols-outlined">
+                      <span class="btn-wrapper material-symbols-outlined">
                         <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png"/>
                       </span>
                   </button>

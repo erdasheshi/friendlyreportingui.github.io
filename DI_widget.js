@@ -372,16 +372,15 @@
         // Initialize menu bar and buttons
         const menuBar = this.shadowRoot.querySelector(".menu-bar");
   
-        menuBar.appendChild(chatbotToggler);
+       
         menuBar.appendChild(infoBtn);
         menuBar.appendChild(searchBtn);
         menuBar.appendChild(supportChannelBtn);
   
         this.shadowRoot.appendChild(menuBar);
-        this.shadowRoot.appendChild(chatbotToggler);
-  
   
       }
+      
       onCustomWidgetBeforeUpdate(changedProperties) {
         this._props = {
           ...this._props,

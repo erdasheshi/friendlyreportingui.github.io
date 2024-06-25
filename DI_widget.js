@@ -56,15 +56,11 @@
         }
   
         .menu-btn {
-          position: fixed;
-          display: flex;
-          height: 50px;
-          width: 50 px;
           padding: 5px 15px;
           color: rgb(182, 134, 21);
           background-color: transparent;
           border: none;
-          border-radius: 50%;
+          border-radius: 10px;
           cursor: pointer;
           font-size: 1rem;
           margin-bottom: 4px;

@@ -319,13 +319,19 @@
   <div class = "window-container">
       <!-- Chat button -->
       <button class="chatbot-toggler">
-        <img src="https://erdasheshi.github.io/fr.github.io/DI_chat.png" class="material-symbols-rounded"/>
-        <img src="https://erdasheshi.github.io/fr.github.io/DI_close.png" class="material-symbols-outlined"/>
+        <span class="material-symbols-rounded">
+          <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_chat.png"/>
+        </span>
+        <span class="material-symbols-outlined">
+          <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_close.png"/>
+        </span>
       </button>
       <div class="chatbot">
           <header>
             <h2>Digital Assistant</h2>
-            <img src="https://erdasheshi.github.io/fr.github.io/DI_close.png" class="material-symbols-outlined"/>
+            <span class="close-btn material-symbols-outlined">
+             <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_close.png"/>
+            </span>
           </header>
           <ul class="chatbox">
             <li class="chat incoming">
@@ -495,7 +501,7 @@
     toggleChatBot() {
       const isChatBotVisible = this.shadowRoot.getElementById("body").classList.contains("show-chatbot");
       this.shadowRoot.getElementById("body").classList.toggle("show-chatbot", !isChatBotVisible);
-    }
+      }
 
     //this.shadowRoot done
     handleChat = () => {

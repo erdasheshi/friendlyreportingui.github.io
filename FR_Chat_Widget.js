@@ -42,6 +42,11 @@
         color: rgb(182, 134, 21);
       }
 
+      .img_wrapper img {
+        width: 100%;
+        height: auto;
+      }
+
       .chatbot-toggler {
         position: fixed;
         bottom: 25px;
@@ -319,17 +324,17 @@
   <div class = "window-container">
       <!-- Chat button -->
       <button class="chatbot-toggler">
-        <span class="material-symbols-rounded">
+        <span class="img_wrapper material-symbols-rounded">
           <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_chat.png"/>
         </span>
-        <span class="material-symbols-outlined">
+        <span class="img_wrapper material-symbols-outlined">
           <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_close.png"/>
         </span>
       </button>
       <div class="chatbot">
           <header>
             <h2>Digital Assistant</h2>
-            <span class="close-btn material-symbols-outlined">
+            <span class="img_wrapper close-btn material-symbols-outlined">
              <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_close.png"/>
             </span>
           </header>

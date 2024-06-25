@@ -49,7 +49,7 @@
         .menu-bar {
           background-color: transparent;
           display: flex;
-          width: 100%;
+          width: 70%;
           justify-content: center;
           align-items: center;
           padding-top: 1%;
@@ -77,17 +77,19 @@
         }
   
         .menu-btn .btn-text {
-          font-size: 12px;
+          display: block;
+          font-size: 1.2rem;
           /* Text size, adjust as needed */
         }
 
         .di-menu-wrapper img{
-            width: 50%;
+            display: inline;
+            width: 5%;
             height: auto;
         }
 
         .btn-wrapper img{
-            width: 50%;
+            width: 5%;
             height: auto;
         }
   
@@ -140,8 +142,8 @@
             color: white;
         }
   
-        #add-item-btn,
-        #all-items-btn {
+        .show-all-fav-items-btn,
+        .show-all-items-btn {
           float: right;
           margin-top: -1.3rem;
           /* Adjust based on your layout to align properly */
@@ -281,14 +283,18 @@
           <div id="favorite-insights-container">
               <div class="favorites-header">
                   <h2>Favorites</h2>
-                  <button id="add-item-btn">+ Add Item</button>
+                  <button class="show-all-fav-items-btn">
+                      <span class="btn-wrapper material-symbols-outlined">
+                        <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png"/>
+                      </span>
+                  </button>
                   <hr>
               </div>
           </div>
           <div id="all-insights-container">
               <div class="all-insights-section">
                   <h2>All Insights</h2>
-                  <button id="all-items-btn">
+                  <button class="show-all-items-btn">
                       <span class="btn-wrapper material-symbols-outlined">
                         <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png"/>
                       </span>
@@ -339,7 +345,8 @@
         infoBtn.className = 'menu-btn';
         infoBtn.innerHTML = `<span class="di-menu-wrapper">
         <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_info.png"/>
-       </span>`;
+       </span>
+       <span class="btn-text">Info</span>`;
         // Add event listener for search button functionality
         infoBtn.addEventListener("click", () => {
           const url = 'https://pages.github.tools.sap/HANA-Cloud-QA-Delivery/Docs/Quality_Delivery_Reporting/Overview/';
@@ -351,7 +358,8 @@
         supportChannelBtn.className = 'menu-btn';
         supportChannelBtn.innerHTML = `<span class="di-menu-wrapper">
         <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_support.png"/>
-       </span>`;
+       </span>
+       <span class="btn-text">Contact</span>`;
         supportChannelBtn.addEventListener("click", () => {
   
           const emailAddress = 'DL_63E569BB8226710299FEF691@global.corp.sap'; // reporting DL

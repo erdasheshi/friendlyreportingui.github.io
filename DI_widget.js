@@ -80,6 +80,11 @@
           font-size: 12px;
           /* Text size, adjust as needed */
         }
+
+        .di-menu-wrapper img{
+            width: 100%;
+            height: auto;
+        }
   
         /*------------------------- ??????????????????-------------- -------------------------*/
   
@@ -293,7 +298,9 @@
               <div class="all-insights-section">
                   <h2>All Insights</h2>
                   <button id="all-items-btn">
-                      <span class="material-symbols-outlined">chevron_right</span>
+                      <span class="material-symbols-outlined">
+                        <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png"/>
+                      </span>
                   </button>
                   <hr>
               </div>
@@ -327,7 +334,9 @@
         const searchBtn = document.createElement("button");
         searchBtn.textContent = "Search";
         searchBtn.className = 'menu-btn';
-        searchBtn.innerHTML = `<span class="close-btn material-symbols-outlined">search</span>
+        searchBtn.innerHTML = `<span class="di-menu-wrapper">
+         <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_search.png"/>
+        </span>
   <span class="btn-text">Search</span>`;
         // Add event listener for search button functionality
         searchBtn.addEventListener("click", () => {
@@ -337,8 +346,9 @@
         const infoBtn = document.createElement("button");
         infoBtn.textContent = "Information";
         infoBtn.className = 'menu-btn';
-        infoBtn.innerHTML = `<span class="close-btn material-symbols-outlined">info</span>
-  <span class="btn-text">Info</span>`;
+        infoBtn.innerHTML = `<span class="di-menu-wrapper">
+        <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_info.png"/>
+       </span>`;
         // Add event listener for search button functionality
         infoBtn.addEventListener("click", () => {
           const url = 'https://pages.github.tools.sap/HANA-Cloud-QA-Delivery/Docs/Quality_Delivery_Reporting/Overview/';
@@ -348,8 +358,9 @@
         const supportChannelBtn = document.createElement("button");
         supportChannelBtn.textContent = "Support Channel";
         supportChannelBtn.className = 'menu-btn';
-        supportChannelBtn.innerHTML = `<span class="close-btn material-symbols-outlined">perm_phone_msg</span> 
-  <span class="btn-text">Support</span>`;
+        supportChannelBtn.innerHTML = `<span class="di-menu-wrapper">
+        <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_support.png"/>
+       </span>`;
         supportChannelBtn.addEventListener("click", () => {
   
           const emailAddress = 'DL_63E569BB8226710299FEF691@global.corp.sap'; // reporting DL
@@ -380,7 +391,7 @@
         this.shadowRoot.appendChild(menuBar);
   
       }
-      
+
       onCustomWidgetBeforeUpdate(changedProperties) {
         this._props = {
           ...this._props,

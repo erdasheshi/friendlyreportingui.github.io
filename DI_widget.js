@@ -486,8 +486,10 @@
           button.addEventListener('click', () => {
             const bodyText = this.parentNode.nextElementSibling; // Directly targets the insight-body-text div
             const icon = button.querySelector(".expand"); // Targets the <img> element inside the button
-            console.log("ICON : ", icon);
+            console.log("bodyText : ", bodyText);
+            console.log("ICON before : ", icon);
             this.toggleExpansion(icon);
+            console.log("ICON after : ", icon);
 
             // Toggle body text visibility and icon class
             if (bodyText.style.display === 'none' || bodyText.style.display === '') {

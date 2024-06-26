@@ -344,8 +344,8 @@
   
   
         /*------------------------------- Favorites & ALL Insights ----------------------------------------- */
-        const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
-        const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
+        const allInsightsContainer = this.shadowRoot.querySelector('#all-insights');
+        const favoriteInsightsContainer = this.shadowRoot.querySelector('#favourites');
         const allInsightsExpander = allInsightsContainer.querySelector(".all-items-btn");
         const favInsightsExpander = favoriteInsightsContainer.querySelector(".fav-items-btn");
   
@@ -413,11 +413,12 @@
         menuBar.appendChild(supportChannelBtn);
 
 
-
+        console.log("All insights expander : ",allInsightsExpander);
         allInsightsExpander.addEventListener("click", () => {
           this.toggleExpansionIcon(allInsightsExpander);
         });
 
+        console.log("Fav insights expander : ",allInsightsExpander);
         favInsightsExpander.addEventListener("click", () => {
           this.toggleExpansionIcon(favInsightsExpander);
         });

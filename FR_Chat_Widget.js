@@ -227,11 +227,9 @@
         align-self: flex-end;
         color: #568912;
         cursor: pointer;
-        height: 55px;
         display: flex;
         align-items: center;
         visibility: hidden;
-        font-size: 1.35rem;
       }
 
       .chat-input textarea:valid~span {
@@ -348,7 +346,9 @@
           </ul>
           <div class="chat-input">
             <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
-            <span id="send-btn" class="material-symbols-rounded">send</span>
+            <span id="send-btn" class="chat-btn-wrapper material-symbols-rounded">
+              <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_response.png"/>
+            </span>
           </div>
       </div>
   </div>

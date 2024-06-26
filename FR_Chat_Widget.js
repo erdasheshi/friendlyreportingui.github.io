@@ -42,7 +42,7 @@
         color: rgb(182, 134, 21);
       }
 
-      .chat_button_wrapper img {
+      .chat-btn-wrapper img {
         width: 60%;
         height: auto;
       }
@@ -322,23 +322,23 @@
   <div class = "window-container">
       <!-- Chat button -->
       <button class="chatbot-toggler">
-        <span class="chat_button_wrapper material-symbols-rounded">
+        <span class="chat-btn-wrapper material-symbols-rounded">
           <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_chat.png"/>
         </span>
-        <span class="chat_button_wrapper material-symbols-outlined">
+        <span class="chat-btn-wrapper material-symbols-outlined">
           <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_close.png"/>
         </span>
       </button>
       <div class="chatbot">
           <header>
             <h2>Digital Assistant</h2>
-            <span class="chat_button_wrapper close-btn material-symbols-outlined">
+            <span class="chat-btn-wrapper close-btn material-symbols-outlined">
              <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_close.png"/>
             </span>
           </header>
           <ul class="chatbox">
             <li class="chat incoming">
-              <span class="chat_button_wrapper material-symbols-outlined">
+              <span class="chat-btn-wrapper material-symbols-outlined">
                 <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_response.png"/>
               </span>
               <p>Hi there 👋<br>How can I help you today?</p>
@@ -431,7 +431,7 @@
       this.shadowRoot.querySelector(".chatbox").appendChild(chatLi); 
 
       chatLi.classList.add("chat", `${className}`);
-      let chatContent = className === "outgoing" ? `<p></p>` : `<span class="chat_button_wrapper material-symbols-outlined">
+      let chatContent = className === "outgoing" ? `<p></p>` : `<span class="chat-btn-wrapper material-symbols-outlined">
       <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_response.png"/>
       </span><p></p>`;
       chatLi.innerHTML = chatContent;

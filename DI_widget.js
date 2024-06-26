@@ -116,12 +116,13 @@
   
         /*------------------------- Insight Headers -------------------------*/
   
-        /*    #favorites-section h2,
+        #favorites-header h2,
         #all-insights-section h2 {
           display: inline-block;
           margin-right: 10px;
           margin-bottom: 0;
-        }*/
+          color: rgb(232, 171, 17);
+        }
 
         .header h2 {
             font-size: 1.4rem;
@@ -162,7 +163,6 @@
           margin-bottom: 10px;
           margin: 0 auto;
           align-items: center;
-          color: rgb(232, 171, 17);
           padding: 1% 4%;
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
         }

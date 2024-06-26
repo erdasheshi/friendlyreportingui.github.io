@@ -102,7 +102,6 @@
         .additional-container {
           padding: 20px;
           background-color: #f0f0f0;
-          /* Light background for visibility */
           margin-top: 20px;
           /* Space from the sections above */
         }
@@ -129,19 +128,14 @@
             color: white;
         }
   
-        .all-fav-items-btn,
+        .fav-items-btn,
         .all-items-btn {
+          cursor: pointer;
           float: right;
-          display: flex;
-          margin-top: -1.3rem;
-          /* Adjust based on your layout to align properly */
+          margin-right: 0.3rem;
           background-color: transparent;
           border: transparent;
-          color: blue;
           opacity: 1;
-          /* Just in case */
-          visibility: visible;
-          /* Just in case */
         }
 
         .expand {
@@ -175,7 +169,6 @@
         .insight-expand-btn {
           cursor: pointer;
           background-color: #33260b00;
-          color: rgb(182, 134, 21);
           border: none;
           border-radius: 5px;
           padding: 5px 10px;
@@ -213,6 +206,26 @@
           display: flex;
           align-items: center;
           width: 88%;
+        }
+
+        #all-insights-container 
+        .expand {
+          visibility: hidden;
+        }
+
+        #all-insights-container 
+        .collapse {
+          visibility: visible;
+        }
+
+        #favorite-insights-container
+        .expand {
+          visibility: hidden;
+        }
+
+        #favorite-insights-container
+        .collapse {
+          visibility: visible;
         }
   
         /* Style for the button */
@@ -292,16 +305,17 @@
   
       <!-- Insights -->
         <div class="insights-section">
-          <div id="favorite-insights-container">
+          <div class="favourites">
               <div class="favorites-header">
                   <h2>Favorites</h2>
-                  <button class="all-fav-items-btn btn-wrapper">
+                  <button class="fav-items-btn btn-wrapper">
                     <img class="expand"/>
                   </button>
                   <hr>
               </div>
+              <div id="favorite-insights-container"></div>
           </div>
-          <div id="all-insights-container">
+          <div class="all-insights">
               <div class="all-insights-section">
                 <h2>All Insights</h2>
                 <button class="all-items-btn btn-wrapper">
@@ -309,6 +323,7 @@
                 </button>
                 <hr>
               </div>
+              <div id="all-insights-container"></div>
           </div>
         </div>
   </div>
@@ -331,6 +346,8 @@
         /*------------------------------- Favorites & ALL Insights ----------------------------------------- */
         const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
         const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
+        const allInsightsExpander = allInsightsContainer.querySelector(".all-items-btn");
+        const favInsightsExpander = favoriteInsightsContainer.querySelector(".fav-items-btn");
   
         this.fetchInsights().catch(error => console.error('Error:', error));
   
@@ -396,9 +413,13 @@
         menuBar.appendChild(supportChannelBtn);
 
 
-        const showInsightsButton = this.shadowRoot.querySelector(".all-fav-items-btn");
-        showInsightsButton.addEventListener("click", () => {
-            
+
+        allInsightsExpander.addEventListener("click", () => {
+          this.toggleExpansionIcon(allInsightsExpander);
+        });
+
+        favInsightsExpander.addEventListener("click", () => {
+          this.toggleExpansionIcon(favInsightsExpander);
         });
   
       }

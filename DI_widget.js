@@ -485,15 +485,14 @@
           // Add click event listener to the button
           button.addEventListener('click', () => {
             const bodyText = button.parentNode.nextElementSibling; // Directly targets the insight-body-text div
-            const icon = button.querySelector(".expand"); // Targets the <img> element inside the button
-            console.log("bodyText : ", bodyText);
             
-            this.toggleExpansionIcon(icon);
           
 
             // Toggle body text visibility and icon class
             if (bodyText.style.display === 'none' || bodyText.style.display === '') {
                 bodyText.style.display = 'block';
+                const icon = button.querySelector(".expand"); // Targets the <img> element inside the button
+                this.toggleExpansionIcon(icon);
                 
               // Create additional UI elements only if they don't already exist
               if (!bodyText.querySelector('.feedback')) {
@@ -531,7 +530,9 @@
                 //  bodyText.parentNode.insertBefore(feedbackContainer, bodyText); // Insert the feedback container right before the bodyText
               }
             } else {
-              bodyText.style.display = "none";
+                const icon = button.querySelector(".collapse");
+                this.toggleExpansionIcon(icon);
+                odyText.style.display = "none";
             }
             itemElement.appendChild(bodyText);
           });

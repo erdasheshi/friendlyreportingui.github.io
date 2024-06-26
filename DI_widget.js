@@ -448,6 +448,7 @@
   
       //this.shadowRoot done
       populateInsightsUI(data) {
+        const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
         data.forEach(item => {
           const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
 
@@ -535,8 +536,9 @@
           });
   
           // Append the item div to the container
-          this.favoriteInsightsContainer.appendChild(itemElement);
+          favoriteInsightsContainer.appendChild(itemElement);
         });
+
       }
     }
     customElements.define("external-di-widget", Widget);

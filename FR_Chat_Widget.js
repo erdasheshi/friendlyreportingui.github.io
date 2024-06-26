@@ -348,7 +348,9 @@
           </ul>
           <div class="chat-input">
             <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
-            <span id="send-btn" class="material-symbols-rounded">send</span>
+            <span id="send-btn" class="material-symbols-rounded">
+              <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_send.png"/>
+            </span>
           </div>
       </div>
   </div>

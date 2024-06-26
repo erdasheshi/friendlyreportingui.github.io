@@ -479,7 +479,7 @@
           // Create the insight-body-text div and add it to the item div
           const bodyTextDiv = document.createElement('div');
           bodyTextDiv.className = 'insight-body-text';
-          bodyTextDiv.textContent = item.content;
+          bodyTextDiv.innerHTML = item.content;
           itemElement.appendChild(bodyTextDiv);
             
           // Add click event listener to the button
@@ -533,7 +533,7 @@
               }
             } else {
               bodyText.style.display = 'none';
-              icon.className = 'fas fa-chevron-right';
+              icon.className = '';
             }
             itemElement.appendChild(bodyText);
           });

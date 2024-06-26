@@ -487,14 +487,16 @@
             const bodyText = button.parentNode.nextElementSibling; // Directly targets the insight-body-text div
             const icon = button.querySelector(".expand"); // Targets the <img> element inside the button
             console.log("bodyText : ", bodyText);
-            console.log("ICON before : ", icon);
-            this.toggleExpansion(icon);
-            console.log("ICON after : ", icon);
+            
+            //this.toggleExpansion(icon);
+          
 
             // Toggle body text visibility and icon class
             if (bodyText.style.display === 'none' || bodyText.style.display === '') {
-              bodyText.style.display = 'block';
-              icon.className = 'unexpand';
+                console.log("ICON before : ", icon);
+                bodyText.style.display = 'block';
+                icon.className = 'unexpand';
+                console.log("ICON after : ", icon);
   
               // Create additional UI elements only if they don't already exist
               if (!bodyText.querySelector('.feedback')) {
@@ -532,8 +534,8 @@
                 //  bodyText.parentNode.insertBefore(feedbackContainer, bodyText); // Insert the feedback container right before the bodyText
               }
             } else {
-              bodyText.style.display = 'none';
-              icon.className = '';
+              bodyText.style.display = "none";
+              icon.className = "expand";
             }
             itemElement.appendChild(bodyText);
           });

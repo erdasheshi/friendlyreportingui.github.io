@@ -42,6 +42,11 @@
         color: rgb(182, 134, 21);
       }
 
+      .chat-input .chat-btn-wrapper {
+        width: 100%;
+        display: flex;
+      }
+
       .chat-btn-wrapper img {
         width: 60%;
         height: auto;

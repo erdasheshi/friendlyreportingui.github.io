@@ -128,8 +128,8 @@
             color: white;
         }
   
-        .show-all-fav-items-btn,
-        .show-all-items-btn {
+        .all-fav-items-btn,
+        .all-items-btn {
           float: right;
           margin-top: -1.3rem;
           /* Adjust based on your layout to align properly */
@@ -140,6 +140,14 @@
           /* Just in case */
           visibility: visible;
           /* Just in case */
+        }
+
+        .expand {
+            content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png");
+        }
+
+        .collapse {
+            content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_unexpand.png");
         }
   
         /*------------------------- Insights -------------------------*/
@@ -254,6 +262,22 @@
           font-size: 22px;
           padding-right: 10px;
         }
+
+        .thumbs-up-img {
+            content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_thumbs_up.png");
+        }
+
+        .thumbs-down-img {
+            content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_thumbs_down.png");
+        }
+
+        .add-favorite-img {
+            content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_add_favorite.png");
+        }
+
+        .favorite-img {
+            content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_favorite.png");
+        }
   
   
   </style>
@@ -269,8 +293,8 @@
           <div id="favorite-insights-container">
               <div class="favorites-header">
                   <h2>Favorites</h2>
-                  <button class="show-all-fav-items-btn btn-wrapper">
-                    <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png"/>
+                  <button class="all-fav-items-btn btn-wrapper">
+                    <img class="expand"/>
                   </button>
                   <hr>
               </div>
@@ -278,8 +302,8 @@
           <div id="all-insights-container">
               <div class="all-insights-section">
                 <h2>All Insights</h2>
-                <button class="show-all-items-btn btn-wrapper">
-                <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_expand.png"/>
+                <button class="all-items-btn btn-wrapper">
+                <img class="expand"/>
                 </button>
                 <hr>
               </div>
@@ -316,7 +340,7 @@
         searchBtn.innerHTML = `<span class="di-menu-wrapper">
          <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_search.png"/>
         </span>
-  <span class="btn-text">Search</span>`;
+        <span class="btn-text">Search</span>`;
         // Add event listener for search button functionality
         searchBtn.addEventListener("click", () => {
           console.log("Search button clicked");
@@ -368,6 +392,12 @@
         menuBar.appendChild(infoBtn);
         menuBar.appendChild(searchBtn);
         menuBar.appendChild(supportChannelBtn);
+
+
+        const showInsightsButton = this.shadowRoot.querySelector(".all-fav-items-btn");
+        showInsightsButton.addEventListener("click", () => {
+            
+          });
   
       }
 
@@ -425,8 +455,8 @@
   
           // Create the button and add it to the button-title container
           const button = document.createElement('button');
-          button.className = 'insight-expand-btn';
-          button.innerHTML = '<i class="fas fa-chevron-right"></i>';
+          button.className = 'btn-wrapper insight-expand-btn';
+          button.innerHTML = '<img class="expand"/>';
           buttonTitleContainer.appendChild(button);
   
           // Add the button-title container to the item div
@@ -441,12 +471,12 @@
           // Add click event listener to the button
           button.addEventListener('click', function () {
             const bodyText = this.parentNode.nextElementSibling; // Directly targets the insight-body-text div
-            const icon = this.querySelector('i'); // Targets the <i> element inside the button
+            const icon = this.querySelector('expand'); // Targets the <img> element inside the button
   
             // Toggle body text visibility and icon class
             if (bodyText.style.display === 'none' || bodyText.style.display === '') {
               bodyText.style.display = 'block';
-              icon.className = 'fas fa-angle-down';
+              icon.className = 'unexpand';
   
               // Create additional UI elements only if they don't already exist
               if (!bodyText.querySelector('.feedback')) {
@@ -463,11 +493,11 @@
                 accurateLabel.textContent = 'Accurate: ';
                 accurateLabel.style.color = 'rgb(182, 134, 21';
                 const thumbsUpAccurate = document.createElement('button');
-                thumbsUpAccurate.className = 'thumbs-up';
-                thumbsUpAccurate.innerHTML = '<span class="material-symbols-outlined">thumb_up</span>';
+                thumbsUpAccurate.className = 'thumbs-up btn-wrapper';
+                thumbsUpAccurate.innerHTML = '<img class="thumbs-up-img">';
                 const thumbsDownAccurate = document.createElement('button');
-                thumbsDownAccurate.className = 'thumbs-down';
-                thumbsDownAccurate.innerHTML = '<span class="material-symbols-outlined">thumb_down</span>';
+                thumbsDownAccurate.className = 'thumbs-down btn-wrapper';
+                thumbsDownAccurate.innerHTML = '<img class="thumbs-down-img">';
   
                 feedbackContainer.appendChild(accurateLabel);
                 feedbackContainer.appendChild(thumbsUpAccurate);
@@ -475,8 +505,8 @@
   
                 // Create the favorite button
                 const favoriteButton = document.createElement('button');
-                favoriteButton.className = 'favorite-button';
-                favoriteButton.innerHTML = '<span class="material-symbols-outlined">star</span>';
+                favoriteButton.className = 'favorite-button btn-wrapper';
+                favoriteButton.innerHTML = '<img class="add-favorite-img">';
                 feedbackContainer.appendChild(favoriteButton);
   
   

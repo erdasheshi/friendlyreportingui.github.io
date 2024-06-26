@@ -43,8 +43,16 @@
       }
 
       .chat-input .chat-btn-wrapper {
-        width: 100%;
+        outline: none;
+        border: none;
+        height: 50px;
+        width: 50px;
         display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #568912;
       }
 
       .chat-btn-wrapper img {
@@ -352,7 +360,7 @@
           <div class="chat-input">
             <textarea placeholder="Enter a message..." spellcheck="true" required></textarea>
             <span id="send-btn" class="chat-btn-wrapper material-symbols-rounded">
-              <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_response.png"/>
+              <img src="https://erdasheshi.github.io/friendlyreportingui.github.io/DI_send.png"/>
             </span>
           </div>
       </div>

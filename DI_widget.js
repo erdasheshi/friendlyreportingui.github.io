@@ -398,7 +398,7 @@
         const showInsightsButton = this.shadowRoot.querySelector(".all-fav-items-btn");
         showInsightsButton.addEventListener("click", () => {
             
-          });
+        });
   
       }
 
@@ -485,7 +485,7 @@
           // Add click event listener to the button
           button.addEventListener('click', () => {
             const bodyText = this.parentNode.nextElementSibling; // Directly targets the insight-body-text div
-            const icon = button.querySelector('expand'); // Targets the <img> element inside the button
+            const icon = button.querySelector(".expand"); // Targets the <img> element inside the button
             console.log("ICON : ", icon);
             this.toggleExpansion(icon);
 
@@ -533,11 +533,11 @@
               bodyText.style.display = 'none';
               icon.className = 'fas fa-chevron-right';
             }
-            this.shadowRoot.appendChild(bodyText);
+            itemElement.appendChild(bodyText);
           });
   
           // Append the item div to the container
-          favoriteInsightsContainer.appendChild(itemElement);
+          allInsightsContainer.appendChild(itemElement);
         });
 
       }

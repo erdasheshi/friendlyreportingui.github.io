@@ -532,7 +532,7 @@
             } else {
                 const icon = button.querySelector(".collapse");
                 this.toggleExpansionIcon(icon);
-                odyText.style.display = "none";
+                bodyText.style.display = "none";
             }
             itemElement.appendChild(bodyText);
           });

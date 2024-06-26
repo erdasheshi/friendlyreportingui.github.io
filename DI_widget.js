@@ -148,7 +148,7 @@
         }
 
         .collapse {
-            content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_unexpand.png");
+            content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_collapse.png");
         }
   
         /*------------------------- Insights -------------------------*/
@@ -435,13 +435,13 @@
         return data.insights;
       }
 
-      toggleExpansion(btnElement){
+      toggleExpansionIcon(btnElement){
         const isExpand = btnElement.classList.contains("expand");
         if (isExpand) {
             btnElement.classList.remove("expand");
-            btnElement.classList.add("unexpand");
+            btnElement.classList.add("collapse");
         } else {
-            btnElement.classList.remove("unexpand");
+            btnElement.classList.remove("collapse");
             btnElement.classList.add("expand");
         }
       }
@@ -488,16 +488,13 @@
             const icon = button.querySelector(".expand"); // Targets the <img> element inside the button
             console.log("bodyText : ", bodyText);
             
-            //this.toggleExpansion(icon);
+            this.toggleExpansionIcon(icon);
           
 
             // Toggle body text visibility and icon class
             if (bodyText.style.display === 'none' || bodyText.style.display === '') {
-                console.log("ICON before : ", icon);
                 bodyText.style.display = 'block';
-                icon.className = 'unexpand';
-                console.log("ICON after : ", icon);
-  
+                
               // Create additional UI elements only if they don't already exist
               if (!bodyText.querySelector('.feedback')) {
   
@@ -535,7 +532,6 @@
               }
             } else {
               bodyText.style.display = "none";
-              icon.className = "expand";
             }
             itemElement.appendChild(bodyText);
           });

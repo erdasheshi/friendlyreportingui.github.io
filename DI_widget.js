@@ -438,11 +438,11 @@
       toggleExpansion(btnElement){
         const isExpand = btnElement.classList.contains("expand");
         if (isExpand) {
-            element.classList.remove("expand");
-            element.classList.add("unexpand");
+            btnElement.classList.remove("expand");
+            btnElement.classList.add("unexpand");
         } else {
-            element.classList.remove("unexpand");
-            element.classList.add("expand");
+            btnElement.classList.remove("unexpand");
+            btnElement.classList.add("expand");
         }
       }
 

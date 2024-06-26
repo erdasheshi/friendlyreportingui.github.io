@@ -131,6 +131,7 @@
         .all-fav-items-btn,
         .all-items-btn {
           float: right;
+          display: flex;
           margin-top: -1.3rem;
           /* Adjust based on your layout to align properly */
           background-color: transparent;
@@ -433,6 +434,17 @@
   
         return data.insights;
       }
+
+      toggleExpansion(element){
+        const isExpand = element.classList.contains("expand");
+        if (isExpand) {
+            element.classList.remove("expand");
+            element.classList.add("unexpand");
+        } else {
+            element.classList.remove("unexpand");
+            element.classList.add("expand");
+        }
+      }
   
       //this.shadowRoot done
       populateInsightsUI(data) {
@@ -472,7 +484,9 @@
           button.addEventListener('click', function () {
             const bodyText = this.parentNode.nextElementSibling; // Directly targets the insight-body-text div
             const icon = this.querySelector('expand'); // Targets the <img> element inside the button
-  
+            console.log("ICON : ", icon);
+            this.toggleExpansion(icon);
+
             // Toggle body text visibility and icon class
             if (bodyText.style.display === 'none' || bodyText.style.display === '') {
               bodyText.style.display = 'block';

@@ -435,8 +435,8 @@
         return data.insights;
       }
 
-      toggleExpansion(element){
-        const isExpand = element.classList.contains("expand");
+      toggleExpansion(btnElement){
+        const isExpand = btnElement.classList.contains("expand");
         if (isExpand) {
             element.classList.remove("expand");
             element.classList.add("unexpand");
@@ -445,6 +445,7 @@
             element.classList.add("expand");
         }
       }
+
   
       //this.shadowRoot done
       populateInsightsUI(data) {
@@ -480,11 +481,11 @@
           bodyTextDiv.className = 'insight-body-text';
           bodyTextDiv.textContent = item.content;
           itemElement.appendChild(bodyTextDiv);
-  
+            
           // Add click event listener to the button
-          button.addEventListener('click', function () {
+          button.addEventListener('click', () => {
             const bodyText = this.parentNode.nextElementSibling; // Directly targets the insight-body-text div
-            const icon = this.querySelector('expand'); // Targets the <img> element inside the button
+            const icon = button.querySelector('expand'); // Targets the <img> element inside the button
             console.log("ICON : ", icon);
             this.toggleExpansion(icon);
 

@@ -124,7 +124,8 @@
           cursor: pointer;
           float: right;
           display: flex;
-          margin-top: 1.3rem;
+          margin-top: 1.2rem;
+          margin-right: -50rem;
           /* Adjust based on your layout to align properly */
           background-color: transparent;
           border: transparent;
@@ -229,7 +230,7 @@
         }
         
         .hide {
-          visibility: collapse;
+          visibility: hide;
         }
   
         /*------------------------- User Feedback -------------------------*/

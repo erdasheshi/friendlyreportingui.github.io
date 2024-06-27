@@ -235,19 +235,19 @@
         }
 
         #all-insights-container
-        .expand {
+        .show {
           visibility: hidden;
         }
         #all-insights-container
-        .collapse {
+        .hide {
           visibility: visible;
         }
         #favorite-insights-container
-        .expand {
+        .show {
           visibility: hidden;
         }
         #favorite-insights-container
-        .collapse {
+        .hide {
           visibility: visible;
         }
   
@@ -427,12 +427,12 @@
 
         allInsightsExpander.addEventListener("click", () => {
             this.toggleExpansion(allInsightsExpander);
-            this.toggleExpansion(allInsightsContainer);
+            this.toggleVisibility(allInsightsContainer);
         });
 
         favInsightsExpander.addEventListener("click", () => {
           this.toggleExpansion(favInsightsExpander);
-          this.toggleExpansion(favoriteInsightsContainer);
+          this.toggleVisibility(favoriteInsightsContainer);
         });
   
       }
@@ -478,6 +478,17 @@
         } else {
             focusElement.classList.remove("collapse");
             focusElement.classList.add("expand");
+        }
+      }
+
+      toggleVisibility(focusElement){
+        const isShowing = focusElement.classList.contains("show");
+        if (isShowing) {
+            focusElement.classList.remove("show");
+            focusElement.classList.add("hide");
+        } else {
+            focusElement.classList.remove("show");
+            focusElement.classList.add("hide");
         }
       }
 

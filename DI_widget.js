@@ -490,7 +490,7 @@
         const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
         data.forEach(item => {
           const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
-
+          var expanderIcon;
           const itemElement = document.createElement('div');
           itemElement.className = 'insight-element';
           allInsightsContainer.appendChild(itemElement); /////////////// Is this needed ???  it's attached to favoriteInsightsContainer////////////
@@ -529,7 +529,7 @@
             // Toggle body text visibility and icon class
             if (bodyText.style.display === 'none' || bodyText.style.display === '') {
                 bodyText.style.display = 'block';
-                const icon = button.querySelector(".expand"); // Targets the <img> element inside the button
+                expanderIcon = button.querySelector(".expand"); // Targets the <img> element inside the button
                 
                 
               // Create additional UI elements only if they don't already exist
@@ -577,10 +577,10 @@
                 //  bodyText.parentNode.insertBefore(feedbackContainer, bodyText); // Insert the feedback container right before the bodyText
               }
             } else {
-                const icon = button.querySelector(".collapse");
+                expanderIcon = button.querySelector(".collapse");
                 bodyText.style.display = "none";
             }
-            this.toggleExpansionIcon(icon);
+            this.toggleExpansionIcon(expanderIcon);
             itemElement.appendChild(bodyText);
           });
   

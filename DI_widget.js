@@ -340,8 +340,8 @@
   
   
         /*------------------------------- Favorites & ALL Insights ----------------------------------------- */
-        const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
-        const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
+        const allInsightsContainer = this.shadowRoot.querySelector("#all-insights-container");
+        const favoriteInsightsContainer = this.shadowRoot.querySelector("#favorite-insights-container");
         const allInsightsExpander = this.shadowRoot.querySelector(".all-items-btn").children[0];
         const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn").children[0];
 
@@ -473,8 +473,8 @@
             focusElement.classList.remove("show");
             focusElement.classList.add("hide");
         } else {
-            focusElement.classList.remove("show");
-            focusElement.classList.add("hide");
+            focusElement.classList.remove("hide");
+            focusElement.classList.add("show");
         }
       }
 

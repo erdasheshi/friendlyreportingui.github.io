@@ -353,6 +353,12 @@
         const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
         const allInsightsExpander = this.shadowRoot.querySelector(".all-items-btn");
         const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn");
+
+        console.log("insights container : ", allInsightsContainer);
+        console.log("insights expander : ", allInsightsExpander);
+        console.log("fav container : ", favoriteInsightsContainer);
+        console.log("fav expander : ", favInsightsExpander);
+
   
         this.fetchInsights().catch(error => console.error('Error:', error));
   

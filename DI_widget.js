@@ -116,8 +116,8 @@
   
         /*------------------------- Insight Headers -------------------------*/
   
-        #favorites-header h2,
-        #all-insights-section h2 {
+        .favorites-header h2,
+        .all-insights-section h2 {
           display: inline-block;
           margin-right: 10px;
           margin-bottom: 0;
@@ -239,7 +239,7 @@
         }
         
         .hide {
-          visibility: hidden;
+          visibility: collapse;
         }
   
         /*------------------------- User Feedback -------------------------*/
@@ -307,7 +307,6 @@
                   <button class="fav-items-btn btn-wrapper">
                     <img class="expand"/>
                   </button>
-                  <hr>
               </div>
               <div id="favorite-insights-container" class="hide"></div>
           </div>
@@ -317,7 +316,6 @@
                 <button class="all-items-btn btn-wrapper">
                 <img class="expand"/>
                 </button>
-                <hr>
               </div>
               <div id="all-insights-container" class="hide"></div>
           </div>

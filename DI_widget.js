@@ -150,7 +150,7 @@
   
         /* Style for the insights, title and list */
         .insights-section {
-          display: block;
+          display: flex;
           max-height: 80%;
           /* Example fixed height */
           border-top: 0.2px solid #4f4c4c;

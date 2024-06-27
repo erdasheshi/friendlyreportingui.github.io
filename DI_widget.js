@@ -562,7 +562,7 @@
 
                 favoriteButton.addEventListener("click", () => {
                   this.toggleFavourite(favoriteButton.children[0]);
-                  if(favoriteButton.classList.contains("favorite")){
+                  if(favoriteButton.children[0].classList.contains("favorite")){
                     favoriteInsightsContainer.appendChild(itemElement);
                   }
                 });

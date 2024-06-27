@@ -115,13 +115,13 @@
   
         /*------------------------- Insight Headers -------------------------*/
   
-        // #favorites-header h2,
-        // #all-insights-section h2 {
-        //   display: inline-block;
-        //   margin-right: 10px;
-        //   margin-bottom: 0;
-        //   color: rgb(232, 171, 17);
-        // }
+        #favorites-header h2,
+        #all-insights-section h2 {
+          display: inline-block;
+          margin-right: 10px;
+          margin-bottom: 0;
+          color: rgb(232, 171, 17);
+        }
 
         .header h2 {
             font-size: 1.4rem;
@@ -208,25 +208,25 @@
           width: 88%;
         }
 
-        #all-insights-container 
-        .expand {
-          visibility: hidden;
-        }
+        // #all-insights-container 
+        // .expand {
+        //   visibility: hidden;
+        // }
 
-        #all-insights-container 
-        .collapse {
-          visibility: visible;
-        }
+        // #all-insights-container 
+        // .collapse {
+        //   visibility: visible;
+        // }
 
-        #favorite-insights-container
-        .expand {
-          visibility: hidden;
-        }
+        // #favorite-insights-container
+        // .expand {
+        //   visibility: hidden;
+        // }
 
-        #favorite-insights-container
-        .collapse {
-          visibility: visible;
-        }
+        // #favorite-insights-container
+        // .collapse {
+        //   visibility: visible;
+        // }
   
         /* Style for the button */
         #insights-button {

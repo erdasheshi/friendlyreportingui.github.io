@@ -115,13 +115,13 @@
   
         /*------------------------- Insight Headers -------------------------*/
   
-        #favorites-header h2,
-        #all-insights-section h2 {
-          display: inline-block;
-          margin-right: 10px;
-          margin-bottom: 0;
-          color: rgb(232, 171, 17);
-        }
+        // #favorites-header h2,
+        // #all-insights-section h2 {
+        //   display: inline-block;
+        //   margin-right: 10px;
+        //   margin-bottom: 0;
+        //   color: rgb(232, 171, 17);
+        // }
 
         .header h2 {
             font-size: 1.4rem;

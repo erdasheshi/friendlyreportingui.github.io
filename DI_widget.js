@@ -124,6 +124,11 @@
           color: rgb(232, 171, 17);
         }
 
+        .favourites, .all-insights {
+          border-bottom: 0.1rem solid #4f4c4c;
+          margin-bottom: 1rem;
+        }
+
         .header h2 {
             font-size: 1.4rem;
             color: white;

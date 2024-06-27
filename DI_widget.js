@@ -133,7 +133,6 @@
         .all-items-btn {
           cursor: pointer;
           float: right;
-          display: flex;
           margin-top: -1.3rem;
           background-color: transparent;
           border: transparent;
@@ -172,7 +171,6 @@
         .insight-expand-btn {
           cursor: pointer;
           background-color: #33260b00;
-          color: rgb(182, 134, 21);
           border: none;
           border-radius: 5px;
           padding: 5px 10px;

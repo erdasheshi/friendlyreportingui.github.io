@@ -234,21 +234,12 @@
           border: 0;
         }
 
-        #all-insights-container
         .show {
-          visibility: hidden;
-        }
-        #all-insights-container
-        .hide {
           visibility: visible;
         }
-        #favorite-insights-container
-        .show {
-          visibility: hidden;
-        }
-        #favorite-insights-container
+        
         .hide {
-          visibility: visible;
+          visibility: hidden;
         }
   
         /*------------------------- User Feedback -------------------------*/

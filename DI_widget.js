@@ -288,8 +288,8 @@
       <!-- Insights -->
         <div class="insights-section">
           <div class="favourites">
-            <div>
-              <div class="favorites-collapsed">
+            <div class="favorites-collapsed">
+              <div>
                   <h2>Favorites</h2>
               </div>
               <div>
@@ -301,8 +301,8 @@
               <div id="favorite-insights-container" class="hide"></div>
           </div>
           <div class="all-insights">
-            <div>
-              <div class="all-insights-section">
+            <div class="all-insights-section">
+              <div>
                 <h2>All Insights</h2>
               </div>
               <div>

@@ -420,11 +420,13 @@
 
 
         allInsightsExpander.addEventListener("click", () => {
-            this.toggleExpansionIcon(allInsightsExpander);
+            this.toggleExpansion(allInsightsExpander);
+            this.toggleExpansion(allInsightsContainer);
         });
 
         favInsightsExpander.addEventListener("click", () => {
-            this.toggleExpansionIcon(favInsightsExpander);
+          this.toggleExpansion(favInsightsExpander);
+          this.toggleExpansion(favoriteInsightsContainer);
         });
   
       }
@@ -462,14 +464,14 @@
         return data.insights;
       }
 
-      toggleExpansionIcon(btnElement){
-        const isExpand = btnElement.classList.contains("expand");
+      toggleExpansion(focusElement){
+        const isExpand = focusElement.classList.contains("expand");
         if (isExpand) {
-            btnElement.classList.remove("expand");
-            btnElement.classList.add("collapse");
+            focusElement.classList.remove("expand");
+            focusElement.classList.add("collapse");
         } else {
-            btnElement.classList.remove("collapse");
-            btnElement.classList.add("expand");
+            focusElement.classList.remove("collapse");
+            focusElement.classList.add("expand");
         }
       }
 
@@ -519,7 +521,7 @@
             if (bodyText.style.display === 'none' || bodyText.style.display === '') {
                 bodyText.style.display = 'block';
                 const icon = button.querySelector(".expand"); // Targets the <img> element inside the button
-                this.toggleExpansionIcon(icon);
+                this.toggleExpansion(icon);
                 
               // Create additional UI elements only if they don't already exist
               if (!bodyText.querySelector('.feedback')) {
@@ -558,7 +560,7 @@
               }
             } else {
                 const icon = button.querySelector(".collapse");
-                this.toggleExpansionIcon(icon);
+                this.toggleExpansion(icon);
                 bodyText.style.display = "none";
             }
             itemElement.appendChild(bodyText);

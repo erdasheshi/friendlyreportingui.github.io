@@ -129,15 +129,19 @@
             color: white;
         }
   
-        .fav-items-btn,
+        .all-fav-items-btn,
         .all-items-btn {
-          cursor: pointer;
           float: right;
+          display: flex;
           margin-top: -1.3rem;
+          /* Adjust based on your layout to align properly */
           background-color: transparent;
           border: transparent;
+          color: blue;
           opacity: 1;
+          /* Just in case */
           visibility: visible;
+          /* Just in case */
         }
 
         .expand {
@@ -171,6 +175,7 @@
         .insight-expand-btn {
           cursor: pointer;
           background-color: #33260b00;
+          color: rgb(182, 134, 21);
           border: none;
           border-radius: 5px;
           padding: 5px 10px;
@@ -290,7 +295,7 @@
           <div class="favourites">
               <div class="favorites-header">
                   <h2>Favorites</h2>
-                  <button class="fav-items-btn btn-wrapper">
+                  <button class="all-fav-items-btn btn-wrapper">
                     <img class="expand"/>
                   </button>
                   <hr>
@@ -329,7 +334,7 @@
         const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
         const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
         const allInsightsExpander = allInsightsContainer.querySelector(".all-items-btn");
-        const favInsightsExpander = favoriteInsightsContainer.querySelector(".fav-items-btn");
+        const favInsightsExpander = favoriteInsightsContainer.querySelector(".all-fav-items-btn");
   
         this.fetchInsights().catch(error => console.error('Error:', error));
   

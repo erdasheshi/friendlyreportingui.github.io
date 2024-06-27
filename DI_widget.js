@@ -233,6 +233,23 @@
           border-radius: 50%;
           border: 0;
         }
+
+        #all-insights-container
+        .expand {
+          visibility: hidden;
+        }
+        #all-insights-container
+        .collapse {
+          visibility: visible;
+        }
+        #favorite-insights-container
+        .expand {
+          visibility: hidden;
+        }
+        #favorite-insights-container
+        .collapse {
+          visibility: visible;
+        }
   
         /*------------------------- User Feedback -------------------------*/
   

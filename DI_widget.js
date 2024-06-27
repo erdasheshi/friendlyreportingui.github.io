@@ -133,7 +133,7 @@
         .all-items-btn {
           cursor: pointer;
           float: right;
-          margin-right: -0.3rem;
+          margin-top: -1.3rem;
           background-color: transparent;
           border: transparent;
           opacity: 1;

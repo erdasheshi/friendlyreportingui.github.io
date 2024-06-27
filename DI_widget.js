@@ -100,17 +100,16 @@
   
         /*------------------------- Insight Headers -------------------------*/
   
-        .favorites-header h2,
-        .all-insights-section h2 {
+        .favorites-header ,
+        .all-insights-section {
           display: inline-block;
-          margin-right: 10px;
-          border-bottom: 0.1rem solid #4f4c4c;
           margin-bottom: 1rem;
           color: rgb(232, 171, 17);
         }
 
         .favourites, .all-insights {
-          
+          margin-right: 10px;
+          border-bottom: 0.1rem solid #4f4c4c;
           width: 100%;
         }
 
@@ -125,7 +124,7 @@
           float: right;
           display: flex;
           margin-top: 1.2rem;
-          margin-right: -50rem;
+          margin-right: -48rem;
           /* Adjust based on your layout to align properly */
           background-color: transparent;
           border: transparent;
@@ -152,7 +151,6 @@
           max-height: 80%;
           /* Example fixed height */
           border-top: 0.2px solid #4f4c4c;
-          margin-bottom: 10px;
           margin: 0 auto;
           align-items: center;
           padding: 1% 4%;
@@ -273,11 +271,11 @@
             content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_thumbs_down.png");
         }
 
-        .add-favorite-img {
+        .add-favorite {
             content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_add_favorite.png");
         }
 
-        .favorite-img {
+        .favorite {
             content:url("https://erdasheshi.github.io/friendlyreportingui.github.io/DI_favorite.png");
         }
   
@@ -467,6 +465,17 @@
         }
       }
 
+      toggleFavourite(focusElement) {
+        const isFavourite = focusElement.classList.contains("add-favorite");
+        if (isFavourite) {
+            focusElement.classList.remove("add-favorite");
+            focusElement.classList.add("favorite");
+        } else {
+            focusElement.classList.remove("favorite");
+            focusElement.classList.add("add-favorite");
+        }
+      }
+
   
       //this.shadowRoot done
       populateInsightsUI(data) {
@@ -543,7 +552,12 @@
                 // Create the favorite button
                 const favoriteButton = document.createElement('button');
                 favoriteButton.className = 'favorite-button btn-wrapper';
-                favoriteButton.innerHTML = '<img class="add-favorite-img">';
+                favoriteButton.innerHTML = '<img class="add-favorite">';
+
+                favoriteButton.addEventListener("click", () => {
+                  this.toggleFavourite(favoriteButton.children[0]);
+                  console.log("Favourite button clicked");
+                });
                 feedbackContainer.appendChild(favoriteButton);
   
   

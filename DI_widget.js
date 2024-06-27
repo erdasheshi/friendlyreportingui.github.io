@@ -131,6 +131,7 @@
   
         .all-fav-items-btn,
         .all-items-btn {
+          cursor: pointer;
           float: right;
           display: flex;
           margin-top: -1.3rem;

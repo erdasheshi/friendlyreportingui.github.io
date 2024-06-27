@@ -346,8 +346,8 @@
         /*------------------------------- Favorites & ALL Insights ----------------------------------------- */
         const allInsightsContainer = this.shadowRoot.querySelector('#all-insights');
         const favoriteInsightsContainer = this.shadowRoot.querySelector('#favourites');
-        const allInsightsExpander = allInsightsContainer.querySelector(".all-items-btn");
-        const favInsightsExpander = favoriteInsightsContainer.querySelector(".fav-items-btn");
+        const allInsightsExpander = this.shadowRoot.querySelector(".all-items-btn");
+        const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn");
   
         this.fetchInsights().catch(error => console.error('Error:', error));
   

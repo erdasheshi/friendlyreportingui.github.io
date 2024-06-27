@@ -90,22 +90,6 @@
           /* Adjust if necessary to control space between line and content below */
         }
   
-        .expandable-content {
-          margin-top: 10px;
-        }
-  
-        .hidden {
-          display: none;
-        }
-  
-        /* Styling for the new container */
-        .additional-container {
-          padding: 20px;
-          background-color: #f0f0f0;
-          /* Light background for visibility */
-          margin-top: 20px;
-          /* Space from the sections above */
-        }
   
         /* Reset float for elements after floated items */
         .clearfix::after {
@@ -140,7 +124,7 @@
           cursor: pointer;
           float: right;
           display: flex;
-          margin-top: -1.3rem;
+          margin-top: 1.3rem;
           /* Adjust based on your layout to align properly */
           background-color: transparent;
           border: transparent;

@@ -318,7 +318,7 @@
                   </button>
                   <hr>
               </div>
-              <div id="favorite-insights-container"></div>
+              <div id="favorite-insights-container" class="hide"></div>
           </div>
           <div class="all-insights">
               <div class="all-insights-section">
@@ -328,7 +328,7 @@
                 </button>
                 <hr>
               </div>
-              <div id="all-insights-container"></div>
+              <div id="all-insights-container" class="hide"></div>
           </div>
         </div>
   </div>

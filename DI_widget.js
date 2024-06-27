@@ -129,7 +129,7 @@
             color: white;
         }
   
-        .all-fav-items-btn,
+        .fav-items-btn,
         .all-items-btn {
           cursor: pointer;
           float: right;
@@ -313,7 +313,7 @@
           <div class="favourites">
               <div class="favorites-header">
                   <h2>Favorites</h2>
-                  <button class="all-fav-items-btn btn-wrapper">
+                  <button class="fav-items-btn btn-wrapper">
                     <img class="expand"/>
                   </button>
                   <hr>
@@ -351,8 +351,8 @@
         /*------------------------------- Favorites & ALL Insights ----------------------------------------- */
         const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
         const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
-        const allInsightsExpander = allInsightsContainer.querySelector(".all-items-btn");
-        const favInsightsExpander = favoriteInsightsContainer.querySelector(".all-fav-items-btn");
+        const allInsightsExpander = this.shadowRoot.querySelector(".all-items-btn");
+        const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn");
   
         this.fetchInsights().catch(error => console.error('Error:', error));
   
@@ -420,11 +420,11 @@
 
 
         allInsightsExpander.addEventListener("click", () => {
-            
+            this.toggleExpansionIcon(allInsightsExpander);
         });
 
         favInsightsExpander.addEventListener("click", () => {
-            
+            this.toggleExpansionIcon(favInsightsExpander);
         });
   
       }

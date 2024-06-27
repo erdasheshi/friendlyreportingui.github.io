@@ -180,14 +180,14 @@
           border: none;
           border-radius: 5px;
           padding: 5px 10px;
-          margin-right: 10px;
+          margin-right: -15rem;
           font-size: 22px;
           vertical-align: bottom;
         }
   
         .insight-element {
-          border-bottom: 0.2px solid #4f4c4c;
-          margin-bottom: 10px;
+          border-bottom: 0.1rem solid #4f4c4c;
+          margin-bottom: 1rem;
         }
   
         .insight-body-text {

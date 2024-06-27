@@ -102,6 +102,7 @@
         .additional-container {
           padding: 20px;
           background-color: #f0f0f0;
+          /* Light background for visibility */
           margin-top: 20px;
           /* Space from the sections above */
         }
@@ -132,10 +133,12 @@
         .all-items-btn {
           cursor: pointer;
           float: right;
-          margin-right: 0.3rem;
+          display: flex;
+          margin-top: -1.3rem;
           background-color: transparent;
           border: transparent;
           opacity: 1;
+          visibility: visible;
         }
 
         .expand {
@@ -150,7 +153,7 @@
   
         /* Style for the insights, title and list */
         .insights-section {
-          display: flex;
+          display: block;
           max-height: 80%;
           /* Example fixed height */
           border-top: 0.2px solid #4f4c4c;
@@ -169,6 +172,7 @@
         .insight-expand-btn {
           cursor: pointer;
           background-color: #33260b00;
+          color: rgb(182, 134, 21);
           border: none;
           border-radius: 5px;
           padding: 5px 10px;
@@ -207,26 +211,6 @@
           align-items: center;
           width: 88%;
         }
-
-        // #all-insights-container 
-        // .expand {
-        //   visibility: hidden;
-        // }
-
-        // #all-insights-container 
-        // .collapse {
-        //   visibility: visible;
-        // }
-
-        // #favorite-insights-container
-        // .expand {
-        //   visibility: hidden;
-        // }
-
-        // #favorite-insights-container
-        // .collapse {
-        //   visibility: visible;
-        // }
   
         /* Style for the button */
         #insights-button {
@@ -344,10 +328,10 @@
   
   
         /*------------------------------- Favorites & ALL Insights ----------------------------------------- */
-        const allInsightsContainer = this.shadowRoot.querySelector('#all-insights');
-        const favoriteInsightsContainer = this.shadowRoot.querySelector('#favourites');
-        const allInsightsExpander = this.shadowRoot.querySelector(".all-items-btn");
-        const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn");
+        const allInsightsContainer = this.shadowRoot.querySelector('#all-insights-container');
+        const favoriteInsightsContainer = this.shadowRoot.querySelector('#favorite-insights-container');
+        const allInsightsExpander = allInsightsContainer.querySelector(".all-items-btn");
+        const favInsightsExpander = favoriteInsightsContainer.querySelector(".fav-items-btn");
   
         this.fetchInsights().catch(error => console.error('Error:', error));
   
@@ -413,14 +397,13 @@
         menuBar.appendChild(supportChannelBtn);
 
 
-        console.log("All insights expander : ",allInsightsExpander);
+
         allInsightsExpander.addEventListener("click", () => {
-          this.toggleExpansionIcon(allInsightsExpander);
+            
         });
 
-        console.log("Fav insights expander : ",allInsightsExpander);
         favInsightsExpander.addEventListener("click", () => {
-          this.toggleExpansionIcon(favInsightsExpander);
+            
         });
   
       }

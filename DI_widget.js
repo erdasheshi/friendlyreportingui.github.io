@@ -222,10 +222,12 @@
         }
 
         .show {
+          display: block;
           visibility: visible;
         }
         
         .hide {
+          display: none;
           visibility: collapse;
         }
   
@@ -405,12 +407,12 @@
 
 
         allInsightsExpander.addEventListener("click", () => {
-            this.toggleExpansion(allInsightsExpander);
+            this.toggleExpansionIcon(allInsightsExpander);
             this.toggleVisibility(allInsightsContainer);
         });
 
         favInsightsExpander.addEventListener("click", () => {
-          this.toggleExpansion(favInsightsExpander);
+          this.toggleExpansionIcon(favInsightsExpander);
           this.toggleVisibility(favoriteInsightsContainer);
         });
   
@@ -449,7 +451,7 @@
         return data.insights;
       }
 
-      toggleExpansion(focusElement){
+      toggleExpansionIcon(focusElement){
         const isExpand = focusElement.classList.contains("expand");
         if (isExpand) {
             focusElement.classList.remove("expand");
@@ -528,7 +530,7 @@
             if (bodyText.style.display === 'none' || bodyText.style.display === '') {
                 bodyText.style.display = 'block';
                 const icon = button.querySelector(".expand"); // Targets the <img> element inside the button
-                this.toggleExpansion(icon);
+                
                 
               // Create additional UI elements only if they don't already exist
               if (!bodyText.querySelector('.feedback')) {
@@ -564,6 +566,8 @@
                   this.toggleFavourite(favoriteButton.children[0]);
                   if(favoriteButton.children[0].classList.contains("favorite")){
                     favoriteInsightsContainer.appendChild(itemElement);
+                  } else {
+                    allInsightsContainer.appendChild(itemElement);
                   }
                 });
                 feedbackContainer.appendChild(favoriteButton);
@@ -574,9 +578,9 @@
               }
             } else {
                 const icon = button.querySelector(".collapse");
-                this.toggleExpansion(icon);
                 bodyText.style.display = "none";
             }
+            this.toggleExpansionIcon(icon);
             itemElement.appendChild(bodyText);
           });
   

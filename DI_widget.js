@@ -103,13 +103,12 @@
         .favorites-header ,
         .all-insights-section {
           display: inline-block;
-          margin-bottom: 1rem;
+          margin-right: 10px;
+          border-bottom: 0.1rem solid #4f4c4c;
           color: rgb(232, 171, 17);
         }
 
         .favourites, .all-insights {
-          margin-right: 10px;
-          border-bottom: 0.1rem solid #4f4c4c;
           width: 100%;
         }
 

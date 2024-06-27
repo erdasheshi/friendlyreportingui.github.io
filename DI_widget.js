@@ -290,7 +290,9 @@
           <div class="favourites">
               <div class="favorites-collapsed">
                   <h2>Favorites</h2>
-                  <button class="fav-items-btn btn-wrapper">
+              </div>
+              <div>
+                <button class="fav-items-btn btn-wrapper">
                     <img class="expand"/>
                   </button>
               </div>
@@ -299,6 +301,8 @@
           <div class="all-insights">
               <div class="all-insights-section">
                 <h2>All Insights</h2>
+              </div>
+              <div>
                 <button class="all-items-btn btn-wrapper">
                 <img class="expand"/>
                 </button>

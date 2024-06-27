@@ -104,13 +104,13 @@
         .all-insights-section h2 {
           display: inline-block;
           margin-right: 10px;
-          margin-bottom: 0;
+          border-bottom: 0.1rem solid #4f4c4c;
+          margin-bottom: 1rem;
           color: rgb(232, 171, 17);
         }
 
         .favourites, .all-insights {
-          border-bottom: 0.1rem solid #4f4c4c;
-          margin-bottom: 1rem;
+          
           width: 100%;
         }
 
@@ -230,7 +230,7 @@
         }
         
         .hide {
-          visibility: hide;
+          visibility: collapse;
         }
   
         /*------------------------- User Feedback -------------------------*/

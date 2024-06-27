@@ -100,11 +100,9 @@
   
         /*------------------------- Insight Headers -------------------------*/
   
-        .favorites-header ,
+        .favorites-collapsed ,
         .all-insights-section {
-          display: inline-block;
-          margin-right: 10px;
-          border-bottom: 0.1rem solid #4f4c4c;
+          border-bottom: 0.2rem solid #4f4c4f;
           color: rgb(232, 171, 17);
         }
 
@@ -290,7 +288,7 @@
       <!-- Insights -->
         <div class="insights-section">
           <div class="favourites">
-              <div class="favorites-header">
+              <div class="favorites-collapsed">
                   <h2>Favorites</h2>
                   <button class="fav-items-btn btn-wrapper">
                     <img class="expand"/>

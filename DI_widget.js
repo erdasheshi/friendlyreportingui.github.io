@@ -102,6 +102,7 @@
   
         .favorites-collapsed ,
         .all-insights-section {
+          display: flex;
           border-bottom: 0.2rem solid #4f4c4f;
           color: rgb(232, 171, 17);
         }

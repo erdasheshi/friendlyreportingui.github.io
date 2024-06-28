@@ -8,12 +8,14 @@
           display: flex;
           flex-direction: column;
           gap: 10px;
+          height: 100%;
+          overflow: scroll
           /* Adjust the space between elements */
         }
   
         /* Style for the container */
         div {
-          overflow-y: auto;
+          // overflow-y: auto;
           margin: 0.5rem auto;
           max-width: 100%;
           width: 100%;

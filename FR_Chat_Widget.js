@@ -62,12 +62,12 @@
 
       .chatbot-toggler {
         position: fixed;
-        bottom: 25px;
-        right: 35px;
+        bottom: 5%;
+        right: 10%;
         outline: none;
         border: none;
-        height: 50px;
-        width: 50px;
+        height: 11.5%;
+        width: 11.5%;
         display: flex;
         cursor: pointer;
         align-items: center;

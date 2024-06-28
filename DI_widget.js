@@ -164,6 +164,7 @@
   
         .insight-expand-btn {
           cursor: pointer;
+          opacity: 50%;
           background-color: #33260b00;
           color: rgb(182, 134, 21);
           border: none;
@@ -312,7 +313,7 @@
               </div>
               <div>
                 <button class="all-items-btn btn-wrapper">
-                <img class="expand"/>
+                <img class="collapse"/>
                 </button>
               </div>
             </div>

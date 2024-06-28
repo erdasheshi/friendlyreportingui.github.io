@@ -316,7 +316,7 @@
                 </button>
               </div>
             </div>
-              <div id="all-insights-container" class="hide"></div>
+              <div id="all-insights-container" class="show"></div>
           </div>
         </div>
   </div>

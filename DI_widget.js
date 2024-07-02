@@ -526,9 +526,6 @@
           // Add click event listener to the button
           button.addEventListener('click', () => {
             const bodyText = button.parentNode.nextElementSibling; // Directly targets the insight-body-text div
-            
-          
-
             // Toggle body text visibility and icon class
             if (bodyText.style.display === 'none' || bodyText.style.display === '') {
                 bodyText.style.display = 'block';
@@ -568,6 +565,7 @@
                 favoriteButton.addEventListener("click", () => {
                   this.toggleFavourite(favoriteButton.children[0]);
                   if(favoriteButton.children[0].classList.contains("favorite")){
+                    button.click();
                     favoriteInsightsContainer.appendChild(itemElement);
                   } else {
                     allInsightsContainer.appendChild(itemElement);

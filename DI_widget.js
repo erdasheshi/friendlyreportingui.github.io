@@ -565,11 +565,11 @@
                 favoriteButton.addEventListener("click", () => {
                   this.toggleFavourite(favoriteButton.children[0]);
                   if(favoriteButton.children[0].classList.contains("favorite")){
-                    button.click();
                     favoriteInsightsContainer.appendChild(itemElement);
                   } else {
                     allInsightsContainer.appendChild(itemElement);
                   }
+                  button.click();
                   const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn").children[0];
                   if((favInsightsExpander.classList.contains("expand") && favoriteInsightsContainer.childElementCount > 0) ||
                   (favInsightsExpander.classList.contains("collapse") && favoriteInsightsContainer.childElementCount == 0)){

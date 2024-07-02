@@ -575,6 +575,7 @@
                   const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn").children[0];
                   if((favInsightsExpander.classList.contains("expand") && favoriteInsightsContainer.childElementCount > 0) ||
                   (favInsightsExpander.classList.contains("collapse") && favoriteInsightsContainer.childElementCount == 0)){
+                    this.button.click;
                     this.toggleExpansionIcon(favInsightsExpander);
                     this.toggleVisibility(favoriteInsightsContainer);
                   }

@@ -18,7 +18,6 @@
           // overflow-y: auto;
           margin: 0.5rem auto;
           max-width: 100%;
-          width: 100%;
         }
   
         .container {
@@ -37,8 +36,7 @@
         .menu-bar {
           background-color: transparent;
           display: flex;
-          //width: 70%;
-          margin: 1rem 15rem;
+          margin: 0.5rem 1rem;
           justify-content: center;
           align-items: center;
           padding-top: 1%;
@@ -103,7 +101,7 @@
   
         /*------------------------- Insight Headers -------------------------*/
   
-        .favorites-collapsed ,
+        .favorites-section ,
         .all-insights-section {
           display: flex;
           border-bottom: 0.2rem solid #4f4c4f;
@@ -153,7 +151,7 @@
           border-top: 0.2px solid #4f4c4c;
           margin: 0 auto;
           align-items: center;
-          padding: 1% 4%;
+          padding: 1% 2%;
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
         }
   
@@ -294,30 +292,22 @@
       <!-- Insights -->
         <div class="insights-section">
           <div class="favourites">
-            <div class="favorites-collapsed">
-              <div>
-                  <h2>Favorites</h2>
-              </div>
-              <div>
-                <button class="fav-items-btn btn-wrapper">
+            <div class="favorites-section">
+              <h2>Favorites</h2>
+              <button class="fav-items-btn btn-wrapper">
                     <img class="expand"/>
-                  </button>
-              </div>
+              </button>
             </div>
-              <div id="favorite-insights-container" class="hide"></div>
+            <div id="favorite-insights-container" class="hide"></div>
           </div>
           <div class="all-insights">
             <div class="all-insights-section">
-              <div>
-                <h2>All Insights</h2>
-              </div>
-              <div>
-                <button class="all-items-btn btn-wrapper">
+              <h2>All Insights</h2>
+              <button class="all-items-btn btn-wrapper">
                 <img class="collapse"/>
-                </button>
-              </div>
+              </button>
             </div>
-              <div id="all-insights-container" class="show"></div>
+            <div id="all-insights-container" class="show"></div>
           </div>
         </div>
   </div>

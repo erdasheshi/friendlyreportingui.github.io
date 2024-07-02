@@ -129,7 +129,7 @@
           background-color: transparent;
           border: transparent;
           color: blue;
-          opacity: 0.6;
+          opacity: 60%;
           visibility: visible;
         }
 
@@ -163,7 +163,7 @@
         .insight-expand-btn {
           cursor: pointer;
           width: 5%;
-          opacity: 50%;
+          opacity: 25%;
           background-color: #33260b00;
           color: rgb(182, 134, 21);
           border: none;

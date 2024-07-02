@@ -572,11 +572,13 @@
                   } else {
                     allInsightsContainer.appendChild(itemElement);
                   }
-                  if(favoriteInsightsContainer.childElementCount != 0){
-                    const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn").children[0];
+                  const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn").children[0];
+                  if((favoriteInsightsContainer.classList.contains("expand") && favInsightsExpander.childElementCount > 0) ||
+                  (favoriteInsightsContainer.classList.contains("collapse") && favInsightsExpander.childElementCount == 0)){
                     this.toggleExpansionIcon(favInsightsExpander);
                     this.toggleVisibility(favoriteInsightsContainer);
                   }
+                  
                 });
                 feedbackContainer.appendChild(favoriteButton);
   

@@ -572,6 +572,10 @@
                   } else {
                     allInsightsContainer.appendChild(itemElement);
                   }
+                  if(favoriteInsightsContainer.childElementCount != 0){
+                    const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn").children[0];
+                    this.toggleExpansionIcon(favInsightsExpander);
+                  }
                 });
                 feedbackContainer.appendChild(favoriteButton);
   

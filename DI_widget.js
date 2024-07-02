@@ -76,7 +76,7 @@
         }
 
         .btn-wrapper img{
-            width: 5%;
+            width: 60%;
             height: auto;
         }
   
@@ -241,6 +241,7 @@
           border: none;
           padding: 1%;
           width: 5%;
+          margin: 0% 10%;
         }
 
         .insights-header{
@@ -264,6 +265,7 @@
           border: none;
           padding: 1%;
           width: 5%;
+          margin: 0% 10%;
         }
 
         .thumbs-up-img {
@@ -538,6 +540,7 @@
                 const accurateLabel = document.createElement('span');
                 accurateLabel.textContent = 'Accurate: ';
                 accurateLabel.style.color = 'rgb(182, 134, 21';
+                accurateLabel.style.width = '10%';
                 const thumbsUpAccurate = document.createElement('button');
                 thumbsUpAccurate.className = 'thumbs-up btn-wrapper';
                 thumbsUpAccurate.innerHTML = '<img class="thumbs-up-img">';

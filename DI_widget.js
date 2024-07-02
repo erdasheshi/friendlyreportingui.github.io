@@ -9,7 +9,7 @@
           flex-direction: column;
           gap: 10px;
           height: 100%;
-          overflow: scroll
+          overflow-y: scroll
           /* Adjust the space between elements */
         }
   
@@ -37,7 +37,8 @@
         .menu-bar {
           background-color: transparent;
           display: flex;
-          width: 70%;
+          //width: 70%;
+          margin: 1rem 15rem;
           justify-content: center;
           align-items: center;
           padding-top: 1%;
@@ -113,9 +114,8 @@
           width: 100%;
         }
 
-        .header h2 {
-            font-size: 1.4rem;
-            color: white;
+        .header {
+            justify-items: center;
         }
   
         .fav-items-btn,
@@ -129,7 +129,7 @@
           background-color: transparent;
           border: transparent;
           color: blue;
-          opacity: 1;
+          opacity: 0.6;
           /* Just in case */
           visibility: visible;
           /* Just in case */

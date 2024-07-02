@@ -104,12 +104,13 @@
         .favorites-section ,
         .all-insights-section {
           display: flex;
+          width: 100%;
           border-bottom: 0.2rem solid #4f4c4f;
           color: rgb(232, 171, 17);
         }
 
         .favourites, .all-insights {
-          width: 100%;
+          width: 97%;
         }
 
         .header {
@@ -119,18 +120,17 @@
         .fav-items-btn,
         .all-items-btn {
           cursor: pointer;
+          width: 5%;
           float: right;
           display: flex;
-          margin-top: 1.2rem;
-          margin-right: -48rem;
+          margin-top: 0.3rem;
+          margin-right: 1rem;
           /* Adjust based on your layout to align properly */
           background-color: transparent;
           border: transparent;
           color: blue;
           opacity: 0.6;
-          /* Just in case */
           visibility: visible;
-          /* Just in case */
         }
 
         .expand {
@@ -146,10 +146,10 @@
         /* Style for the insights, title and list */
         .insights-section {
           display: block;
-          max-height: 80%;
+          max-height: 100%;
           /* Example fixed height */
           border-top: 0.2px solid #4f4c4c;
-          margin: 0 auto;
+          margin: 0;
           align-items: center;
           padding: 1% 2%;
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
@@ -162,14 +162,13 @@
   
         .insight-expand-btn {
           cursor: pointer;
+          width: 5%;
           opacity: 50%;
           background-color: #33260b00;
           color: rgb(182, 134, 21);
           border: none;
           border-radius: 5px;
-          padding: 5px 10px;
-          margin-right: -15rem;
-          font-size: 22px;
+          padding: 1rem;
           vertical-align: bottom;
         }
   
@@ -187,6 +186,7 @@
           font-family: Arial, sans-serif;
           color: rgb(222, 209, 171);
           font-weight: bold;
+          width: 95%;
         }
   
         /* Style for the read insights button image */
@@ -237,31 +237,33 @@
         .favorite-button,
         .favorite-button span {
           cursor: pointer;
-          background-color: #33260b00;
-          color: rgb(182, 134, 21);
+          background-color: transparent;
           border: none;
-          padding: 1px 0px 0px 10px;
-          font-size: 22px;
+          padding: 1%;
+          width: 5%;
+        }
+
+        .insights-header{
+          width: 95%;
         }
   
         .thumbs-up,
         .thumbs-up span {
-          color: rgba(0, 128, 0, 0.601);
+          cursor: pointer;
           background-color: transparent;
           border: none;
-          padding: 1px 2px;
-          font-size: 22px;
+          margin: 0% 10%;
+          padding: 1%;
+          width: 5%;
         }
   
         .thumbs-down,
         .thumbs-down span {
-          color: rgba(255, 0, 0, 0.763);
+          cursor: pointer;
           background-color: transparent;
           border: none;
-          border-radius: 5px;
-          padding: 1px 2px;
-          font-size: 22px;
-          padding-right: 10px;
+          padding: 1%;
+          width: 5%;
         }
 
         .thumbs-up-img {
@@ -293,7 +295,7 @@
         <div class="insights-section">
           <div class="favourites">
             <div class="favorites-section">
-              <h2>Favorites</h2>
+              <h2 class="insights-header">Favorites</h2>
               <button class="fav-items-btn btn-wrapper">
                     <img class="expand"/>
               </button>
@@ -302,7 +304,7 @@
           </div>
           <div class="all-insights">
             <div class="all-insights-section">
-              <h2>All Insights</h2>
+              <h2  class="insights-header">All Insights</h2>
               <button class="all-items-btn btn-wrapper">
                 <img class="collapse"/>
               </button>

@@ -575,6 +575,7 @@
                   if(favoriteInsightsContainer.childElementCount != 0){
                     const favInsightsExpander = this.shadowRoot.querySelector(".fav-items-btn").children[0];
                     this.toggleExpansionIcon(favInsightsExpander);
+                    this.toggleVisibility(favoriteInsightsContainer);
                   }
                 });
                 feedbackContainer.appendChild(favoriteButton);

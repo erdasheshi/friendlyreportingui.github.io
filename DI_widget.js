@@ -428,7 +428,7 @@
       /*------------------------------- Insight Content -----------------------------------------*/
   
       async fetchInsights() {
-        const apiUrl = 'https://hda-friendly-reporting.me.sap.corp/api/v1/insights';
+        const apiUrl = 'https://hda-friendly-reporting.me.sap.corp/api/v1/insights/DORA';
         const apiConfig = {
           method: "GET",
           headers: {

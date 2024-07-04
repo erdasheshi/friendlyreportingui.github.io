@@ -162,7 +162,7 @@
   
         .insight-expand-btn {
           cursor: pointer;
-          width: 5%;
+          width: 6%;
           opacity: 25%;
           background-color: #33260b00;
           color: rgb(182, 134, 21);

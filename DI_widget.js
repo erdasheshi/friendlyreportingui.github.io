@@ -120,10 +120,10 @@
         .fav-items-btn,
         .all-items-btn {
           cursor: pointer;
-          width: 5%;
+          width: 5rem;
           float: right;
           display: flex;
-          margin-top: 0.3rem;
+          margin-top: 1.3rem;
           margin-right: 1rem;
           /* Adjust based on your layout to align properly */
           background-color: transparent;
@@ -162,7 +162,7 @@
   
         .insight-expand-btn {
           cursor: pointer;
-          width: 6%;
+          width: 5rem;
           opacity: 25%;
           background-color: #33260b00;
           color: rgb(182, 134, 21);
